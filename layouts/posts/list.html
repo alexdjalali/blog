@@ -1,0 +1,33 @@
+{{ define "title" }}
+  {{ title (i18n (lower .Title)) | default .Title }} · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+  <section class="container page">
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="{{ .Permalink | safeURL }}">
+          {{ title (i18n (lower .Title)) | default .Title }}
+        </a>
+      </h1>
+    </header>
+    {{ .Content }}
+
+    {{/* Group posts by year, then by month within each year */}}
+    {{ range .Pages.GroupByDate "2006" }}
+      <h2>{{ .Key }}</h2>
+      {{ range .Pages.GroupByDate "January" }}
+        <h3 class="posts-month">{{ .Key }}</h3>
+        <ul class="cv-list">
+          {{ range .Pages }}
+            <li class="has-link" onclick="window.location='{{ .RelPermalink }}'">
+              <strong>{{ .Title }}</strong>
+              {{ with .Description }}
+                <span class="pub-abstract">{{ . }}</span>
+              {{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    {{ end }}
+  </section>
+{{ end }}

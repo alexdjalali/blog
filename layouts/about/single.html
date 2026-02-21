@@ -1,0 +1,37 @@
+{{ define "title" }}
+  {{ .Title }} · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+  {{/* Reuse CV timeline stylesheet for shared SVG styles */}}
+  {{ $style := resources.Get "css/cv-timeline.css" }}
+  {{ if hugo.IsServer }}
+  <style>{{ $style.Content | safeCSS }}</style>
+  {{ else }}
+  {{ $style = $style | resources.Minify }}
+  <style>{{ $style.Content | safeCSS }}</style>
+  {{ end }}
+
+  <section class="container page">
+    <article>
+      <h2>{{ .Title }}</h2>
+      {{ .Content }}
+    </article>
+  </section>
+
+  {{/* D3.js v7 from CDN */}}
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+
+  {{/* Embed location data from Hugo data directory */}}
+  <script>
+    var locationData = {{ $.Site.Data.locations | jsonify | safeJS }};
+  </script>
+
+  {{/* About timeline script */}}
+  {{ $script := resources.Get "js/about-timeline.js" }}
+  {{ if hugo.IsServer }}
+  <script>{{ $script.Content | safeJS }}</script>
+  {{ else }}
+  {{ $script = $script | resources.Minify }}
+  <script>{{ $script.Content | safeJS }}</script>
+  {{ end }}
+{{ end }}

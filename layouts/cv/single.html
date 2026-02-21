@@ -1,0 +1,57 @@
+{{ define "title" }}
+  {{ .Title }} · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+  {{/* CV-specific stylesheet */}}
+  {{ $style := resources.Get "css/cv-timeline.css" }}
+  {{ if hugo.IsServer }}
+  <style>{{ $style.Content | safeCSS }}</style>
+  {{ else }}
+  {{ $style = $style | resources.Minify }}
+  <style>{{ $style.Content | safeCSS }}</style>
+  {{ end }}
+
+  <section class="container page cv-page">
+    <article>
+      <h2>Resume</h2>
+      {{ with .Params.tagline }}
+      <p class="cv-tagline">{{ . }}</p>
+      {{ end }}
+
+      {{/* Timeline visualization */}}
+      <h2>Timeline</h2>
+      <div id="timeline"></div>
+
+      {{/* Experience + Education — two-column layout */}}
+      <div class="cv-columns">
+        <div id="experience" class="cv-section cv-col">
+          <h2>Experience</h2>
+        </div>
+        <div id="education" class="cv-section cv-col">
+          <h2>Education</h2>
+        </div>
+      </div>
+
+      {{/* Remaining content from markdown (skills, research, etc.) */}}
+      {{ .Content }}
+    </article>
+  </section>
+
+  {{/* D3.js v7 from CDN */}}
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+
+  {{/* Embed timeline data from Hugo data directory */}}
+  <script>
+    var timelineData = {{ $.Site.Data.timeline | jsonify | safeJS }};
+    var siteBaseURL = {{ .Site.BaseURL | jsonify | safeJS }};
+  </script>
+
+  {{/* Timeline script */}}
+  {{ $script := resources.Get "js/cv-timeline.js" }}
+  {{ if hugo.IsServer }}
+  <script>{{ $script.Content | safeJS }}</script>
+  {{ else }}
+  {{ $script = $script | resources.Minify }}
+  <script>{{ $script.Content | safeJS }}</script>
+  {{ end }}
+{{ end }}

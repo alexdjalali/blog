@@ -1,0 +1,17 @@
+[
+  {"startdate": "1984-01-01", "enddate": "1985-01-01", "title": "El Paso, TX", "shorttitle": "El Paso"},
+  {"startdate": "1985-01-01", "enddate": "1986-01-01", "title": "Oklahoma City, OK", "shorttitle": "OKC"},
+  {"startdate": "1986-01-01", "enddate": "1988-06-01", "title": "Minneapolis, MN", "shorttitle": "Mpls"},
+  {"startdate": "1988-06-01", "enddate": "1994-06-01", "title": "Houston, TX", "shorttitle": "Houston"},
+  {"startdate": "1994-06-01", "enddate": "1995-06-01", "title": "Tulsa, OK", "shorttitle": "Tulsa"},
+  {"startdate": "1995-06-01", "enddate": "1996-06-01", "title": "Minneapolis, MN", "shorttitle": "Mpls"},
+  {"startdate": "1996-06-01", "enddate": "1999-06-01", "title": "Rochester, MN", "shorttitle": "Rochester"},
+  {"startdate": "1999-06-01", "enddate": "2000-06-01", "title": "Charlottesville, VA", "shorttitle": "C'ville"},
+  {"startdate": "2000-06-01", "enddate": "2004-01-01", "title": "Guam", "shorttitle": "Guam"},
+  {"startdate": "2004-01-01", "enddate": "2004-06-01", "title": "Minneapolis, MN", "shorttitle": "Mpls"},
+  {"startdate": "2004-06-01", "enddate": "2004-09-01", "title": "Guam", "shorttitle": "Guam"},
+  {"startdate": "2004-09-01", "enddate": "2008-08-01", "title": "Chicago, IL", "shorttitle": "Chicago"},
+  {"startdate": "2008-08-01", "enddate": "2009-09-01", "title": "Amsterdam, NL", "shorttitle": "A'dam"},
+  {"startdate": "2009-09-01", "enddate": "2019-12-01", "title": "Bay Area, CA", "shorttitle": "Bay Area"},
+  {"startdate": "2019-12-01", "enddate": "", "title": "Athens, GA", "shorttitle": "Athens"}
+]

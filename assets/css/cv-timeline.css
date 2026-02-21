@@ -1,0 +1,643 @@
+/* CV Timeline — Horizontal Gantt-style */
+
+/* Timeline container */
+#timeline {
+  position: relative;
+  margin-bottom: 2em;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* SVG */
+.timeline-svg {
+  display: block;
+}
+
+/* Year grid lines */
+.grid-line {
+  stroke: #e0e0e0;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+/* Present marker */
+.present-line {
+  stroke: #000;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 3;
+  opacity: 0.4;
+}
+
+/* Time axis */
+.time-axis path,
+.time-axis line {
+  stroke: #999;
+}
+
+.time-axis text {
+  fill: #666;
+  font-size: 11px;
+}
+
+/* Bars */
+.bar-rect {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.bar-rect:hover {
+  opacity: 1;
+}
+
+.bar-rect.job {
+  fill: #333;
+}
+
+.bar-rect.education {
+  fill: #999;
+}
+
+/* Bar labels */
+.bar-label {
+  font-size: 11px;
+  fill: #fff;
+  pointer-events: all;
+  cursor: pointer;
+  user-select: none;
+}
+
+.bar-rect.education + .bar-label {
+  fill: #fff;
+}
+
+/* Tooltip — appended to body so it's never clipped */
+.tl-tooltip {
+  position: absolute;
+  background: #000;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  line-height: 1.4;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 9999;
+  max-width: 360px;
+  white-space: normal;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Legend */
+.timeline-legend {
+  display: flex;
+  gap: 1.5em;
+  margin-top: 0.5em;
+  font-size: 0.8em;
+  color: #666;
+}
+
+.timeline-legend span {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.legend-swatch.job {
+  background-color: #333;
+}
+
+.legend-swatch.education {
+  background-color: #999;
+}
+
+/* Two-column layout for Experience + Education */
+.cv-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+  margin-top: 1.5em;
+}
+
+@media (max-width: 768px) {
+  .cv-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* Detail sections */
+.cv-section {
+  margin-top: 0;
+}
+
+.cv-col {
+  min-width: 0; /* prevent grid blowout */
+}
+
+.cv-section h2 {
+  border-bottom: 2px solid #000;
+  padding-bottom: 0.1em;
+  margin-bottom: 0.3em;
+}
+
+/* Entry cards */
+.cv-entry {
+  margin-bottom: 0.15em;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease, border-left-color 0.2s ease, background-color 0.2s ease;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  border-left: 3px solid transparent;
+  border-radius: 2px;
+  padding: 0.5em 0.8em;
+}
+
+.cv-entry.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cv-entry:hover {
+  border-left-color: #c0392b;
+  background: #f9f9f9;
+}
+
+.cv-entry h3 {
+  margin-bottom: 0;
+  font-size: 0.95em;
+  font-weight: 400;
+}
+
+.cv-entry-logo {
+  margin-right: 0.5em;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+  border-radius: 3px;
+}
+
+.cv-entry h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cv-entry h3 a:hover {
+  text-decoration: underline;
+}
+
+.cv-entry h3 b {
+  font-size: 1em;
+  color: #666;
+  font-weight: 400;
+  margin-right: 0.5em;
+}
+
+.cv-summary {
+  padding-left: 0;
+  color: #555;
+  font-size: 0.82em;
+  line-height: 1.4;
+  margin: 0 0 0.05em 0;
+}
+
+.cv-entry .description {
+  padding-left: 0;
+  color: #555;
+  font-size: 0.82em;
+  line-height: 1.5;
+}
+
+.cv-entry .description.collapsed {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+.cv-entry .description:not(.collapsed) {
+  max-height: 500px;
+  opacity: 1;
+  transition: max-height 0.4s ease, opacity 0.3s ease 0.1s;
+}
+
+.learn-more {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.58em;
+  color: #777;
+  text-decoration: none;
+  margin-left: 0;
+  margin-top: 0.1em;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0.12em 0.55em;
+  background: #fafafa;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+.learn-more:hover {
+  color: #c0392b;
+  border-color: #c0392b;
+  background-color: transparent;
+  transform: translateX(2px);
+}
+
+.learn-more:active {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+body.colorscheme-dark .learn-more {
+  color: #aaa;
+  border-color: #555;
+  background: #2a2a2a;
+}
+
+body.colorscheme-dark .learn-more:hover {
+  color: #c0392b;
+  border-color: #c0392b;
+  background-color: transparent;
+}
+
+body.colorscheme-dark .learn-more:active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cv-entry .description ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.1em 0;
+}
+
+.cv-entry .description li {
+  position: relative;
+  padding-left: 1.6em;
+  margin-bottom: 0;
+}
+
+.cv-entry .description li::before {
+  content: "";
+  position: absolute;
+  left: 0.35em;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  background: #999;
+  border-radius: 50%;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.cv-entry .description li:hover::before {
+  background: #c0392b !important;
+  transform: scale(1.5);
+}
+
+.cv-entry .description li::after {
+  content: "";
+  position: absolute;
+  left: calc(0.35em + 2.75px);
+  top: calc(0.55em + 7px);
+  width: 1.5px;
+  bottom: -0.2em;
+  background: #ddd;
+}
+
+.cv-entry .description li:last-child::after {
+  display: none;
+}
+
+/* Honors / Publications — hidden until JS relocates them */
+#honors,
+#publications {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#honors.visible,
+#publications.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Honors groups */
+.honors-group {
+  margin-bottom: 0.1em;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+}
+
+.honors-group h3 {
+  font-size: 0.95em;
+  font-weight: 400;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* Honors / Publications list */
+.cv-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.cv-list li {
+  position: relative;
+  padding-left: 1.6em;
+  margin-bottom: 0;
+  font-size: 0.82em;
+  line-height: 1.3;
+  color: #555;
+}
+
+.cv-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.35em;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  background: #999;
+  border-radius: 50%;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.cv-list li:hover::before {
+  background: #c0392b !important;
+  transform: scale(1.5);
+}
+
+.cv-list li::after {
+  content: "";
+  position: absolute;
+  left: calc(0.35em + 2.75px);
+  top: calc(0.55em + 7px);
+  width: 1.5px;
+  bottom: -0.2em;
+  background: #ddd;
+}
+
+.cv-list li:last-child::after {
+  display: none;
+}
+
+.cv-list-more {
+  font-size: 0.82em;
+  margin-top: 0.1em;
+  padding-left: 1.2em;
+}
+
+/* Skills section */
+.cv-skills {
+  margin-top: 1.5em;
+}
+
+.cv-skills h2 {
+  border-bottom: 2px solid #000;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.5em;
+}
+
+.cv-skills h3 {
+  font-weight: 400;
+  font-size: 1em;
+  margin-top: 0.7em;
+  margin-bottom: 0.3em;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+}
+
+.skill-tag {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  padding: 0.25em 0.8em;
+  border-radius: 20px;
+  font-size: 0.85em;
+  border: 1px solid #333;
+  transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-tag:hover {
+  transform: scale(1.08);
+  background-color: #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-color: #c0392b;
+}
+
+/* CV header */
+.cv-tagline {
+  color: #555;
+  font-size: 0.92em;
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0 0 1.5em 0;
+}
+
+body.colorscheme-dark .cv-tagline {
+  color: #ccc;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .cv-tagline {
+    color: #ccc;
+  }
+}
+
+.cv-subtitle {
+  font-size: 1.1em;
+  color: #333;
+  margin: 0 0 0.5em 0;
+}
+
+/* Research interests */
+.cv-research {
+  margin-top: 1.5em;
+}
+
+.cv-research h2 {
+  border-bottom: 2px solid #000;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.5em;
+}
+
+/* Print styles */
+@media print {
+  .bar-rect {
+    fill: #fff !important;
+    stroke: #000;
+    stroke-width: 1;
+  }
+  .present-line {
+    display: none;
+  }
+  .cv-entry {
+    opacity: 1;
+    transform: none;
+  }
+  .cv-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cv-entry .description.collapsed {
+    max-height: none;
+    overflow: visible;
+    opacity: 1;
+    margin: revert;
+    padding-top: revert;
+    padding-bottom: revert;
+  }
+  .learn-more {
+    display: none !important;
+  }
+  .cv-entry .description li::before {
+    background: #000;
+  }
+  .cv-entry .description li::after {
+    background: #aaa;
+  }
+}
+
+/* Dark mode support */
+body.colorscheme-dark .bar-rect.job {
+  fill: #5bc0de;
+}
+
+body.colorscheme-dark .bar-rect.education {
+  fill: #8dd4e8;
+}
+
+body.colorscheme-dark .bar-label {
+  fill: #111;
+}
+
+body.colorscheme-dark .grid-line {
+  stroke: #444;
+}
+
+body.colorscheme-dark .present-line {
+  stroke: #ddd;
+}
+
+body.colorscheme-dark .time-axis path,
+body.colorscheme-dark .time-axis line {
+  stroke: #666;
+}
+
+body.colorscheme-dark .time-axis text {
+  fill: #aaa;
+}
+
+body.colorscheme-dark .tl-tooltip {
+  background: #eee;
+  color: #111;
+}
+
+body.colorscheme-dark .cv-entry h3 b,
+body.colorscheme-dark .timeline-legend {
+  color: #aaa;
+}
+
+body.colorscheme-dark .cv-entry:hover {
+  background: #2a2a2a;
+}
+
+body.colorscheme-dark .cv-entry .description,
+body.colorscheme-dark .cv-summary {
+  color: #ccc;
+}
+
+body.colorscheme-dark .cv-entry .description li::before {
+  background: #777;
+}
+
+body.colorscheme-dark .cv-entry .description li::after {
+  background: #444;
+}
+
+body.colorscheme-dark .cv-list li::before {
+  background: #777;
+}
+
+body.colorscheme-dark .cv-list li::after {
+  background: #444;
+}
+
+body.colorscheme-dark .cv-list li {
+  color: #ccc;
+}
+
+body.colorscheme-dark .skill-tag {
+  background-color: #ddd;
+  color: #212121;
+  border-color: #bbb;
+}
+
+body.colorscheme-dark .skill-tag:hover {
+  border-color: #c0392b;
+}
+
+body.colorscheme-dark .cv-section h2,
+body.colorscheme-dark .cv-skills h2,
+body.colorscheme-dark .cv-research h2 {
+  border-bottom-color: #ddd;
+}
+
+body.colorscheme-dark .legend-swatch.job {
+  background-color: #5bc0de;
+}
+
+body.colorscheme-dark .legend-swatch.education {
+  background-color: #8dd4e8;
+}
+
+/* Auto mode */
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .bar-rect.job { fill: #5bc0de; }
+  body.colorscheme-auto .bar-rect.education { fill: #8dd4e8; }
+  body.colorscheme-auto .bar-label { fill: #111; }
+  body.colorscheme-auto .grid-line { stroke: #444; }
+  body.colorscheme-auto .present-line { stroke: #ddd; }
+  body.colorscheme-auto .time-axis path,
+  body.colorscheme-auto .time-axis line { stroke: #666; }
+  body.colorscheme-auto .time-axis text { fill: #aaa; }
+  body.colorscheme-auto .tl-tooltip { background: #eee; color: #111; }
+  body.colorscheme-auto .cv-entry h3 b,
+  body.colorscheme-auto .timeline-legend { color: #aaa; }
+  body.colorscheme-auto .cv-entry:hover { background: #2a2a2a; }
+  body.colorscheme-auto .cv-entry .description,
+  body.colorscheme-auto .cv-summary { color: #ccc; }
+  body.colorscheme-auto .learn-more { color: #aaa; border-color: #555; }
+  body.colorscheme-auto .learn-more:hover { color: #c0392b; border-color: #c0392b; background-color: transparent; }
+  body.colorscheme-auto .learn-more:active { background-color: rgba(255, 255, 255, 0.1); }
+  body.colorscheme-auto .cv-entry .description li::before { background: #777; }
+  body.colorscheme-auto .cv-entry .description li::after { background: #444; }
+  body.colorscheme-auto .cv-list li::before { background: #777; }
+  body.colorscheme-auto .cv-list li::after { background: #444; }
+  body.colorscheme-auto .cv-list li { color: #ccc; }
+  body.colorscheme-auto .skill-tag { background-color: #ddd; color: #212121; border-color: #bbb; }
+  body.colorscheme-auto .skill-tag:hover { border-color: #c0392b; }
+  body.colorscheme-auto .cv-section h2,
+  body.colorscheme-auto .cv-skills h2,
+  body.colorscheme-auto .cv-research h2 { border-bottom-color: #ddd; }
+  body.colorscheme-auto .legend-swatch.job { background-color: #5bc0de; }
+  body.colorscheme-auto .legend-swatch.education { background-color: #8dd4e8; }
+}

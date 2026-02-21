@@ -1,0 +1,111 @@
+baseURL = "https://alexdjalali.github.io/blog/"
+title = "a.j.djalali"
+theme = "coder"
+languageCode = "en"
+defaultContentLanguage = "en"
+enableEmoji = true
+enableRobotsTXT = true
+enableGitInfo = true
+
+[services.googleAnalytics]
+  id = "G-R50JVPX7MP"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.goldmark.extensions.passthrough]
+enable = true
+
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [["$$", "$$"], ["\\[", "\\]"]]
+inline = [["$", "$"], ["\\(", "\\)"]]
+
+[frontmatter]
+  lastmod = [":git", "lastmod", "date"]
+
+[taxonomies]
+  tag = "tags"
+
+[sitemap]
+  changeFreq = "monthly"
+  priority = 0.5
+
+[params]
+author = "a.j.djalali+claude"
+displayName = "a.j.djalali"
+description = "a.j.djalali's personal blog"
+keywords = "nlp,ai,linguistics,computational-semantics,blog"
+images = ["images/og-default.png"]
+avatarURL = "images/headshot.png"
+info = ["Research Faculty · Senior Research Engineer · AI · NLP"]
+dateFormat = "January 2, 2006"
+since = 2026
+colorScheme = "auto"
+hideColorSchemeToggle = false
+customCSS = ["css/custom.css"]
+customJS = ["js/clickable-list.js", "js/collapsible-code.js"]
+math = true
+favicon_32 = "images/favicon-32x32.png"
+favicon_16 = "images/favicon-16x16.png"
+touchicon = "images/apple-touch-icon.png"
+license = '<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
+
+[languages.en]
+languageName = "English"
+
+[[languages.en.menu.main]]
+name = "Home"
+weight = 1
+url = "/"
+
+[[languages.en.menu.main]]
+name = "Posts"
+weight = 2
+url = "posts/"
+
+[[languages.en.menu.main]]
+name = "Publications"
+weight = 3
+url = "publications/"
+
+[[languages.en.menu.main]]
+name = "Resume"
+weight = 4
+url = "cv/"
+
+[[languages.en.menu.main]]
+name = "About"
+weight = 5
+url = "about/"
+
+[[params.social]]
+name = "GitHub"
+icon = "fa-brands fa-github fa-2x"
+weight = 1
+url = "https://github.com/alexdjalali/"
+
+[[params.social]]
+name = "LinkedIn"
+icon = "fa-brands fa-linkedin fa-2x"
+weight = 2
+url = "https://www.linkedin.com/in/alex-djalali-272502273/"
+
+[[params.social]]
+name = "Google Scholar"
+icon = "fa-brands fa-google-scholar fa-2x"
+weight = 3
+url = "https://scholar.google.com/citations?user=nNk4g6oAAAAJ&hl=en"
+
+[[params.social]]
+name = "Spotify"
+icon = "fa-brands fa-spotify fa-2x"
+weight = 4
+url = "https://open.spotify.com/user/alex.djalali"
+
+[[params.social]]
+name = "RSS"
+icon = "fa-solid fa-rss fa-2x"
+weight = 5
+url = "https://alexdjalali.github.io/blog/index.xml"
+rel = "alternate"
+type = "application/rss+xml"
