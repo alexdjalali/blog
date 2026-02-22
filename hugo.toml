@@ -10,6 +10,11 @@ enableGitInfo = true
 [services.googleAnalytics]
   id = "G-R50JVPX7MP"
 
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 3
+  ordered = false
+
 [markup.goldmark.renderer]
 unsafe = true
 
@@ -22,6 +27,9 @@ inline = [["$", "$"], ["\\(", "\\)"]]
 
 [frontmatter]
   lastmod = [":git", "lastmod", "date"]
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
 
 [taxonomies]
   tag = "tags"
@@ -43,7 +51,7 @@ since = 2026
 colorScheme = "auto"
 hideColorSchemeToggle = false
 customCSS = ["css/custom.css"]
-customJS = ["js/clickable-list.js", "js/collapsible-code.js"]
+customJS = ["js/clickable-list.js", "js/collapsible-code.js", "js/reading-progress.js", "js/share.js", "js/search.js"]
 math = true
 favicon_32 = "images/favicon-32x32.png"
 favicon_16 = "images/favicon-16x16.png"
@@ -109,3 +117,14 @@ weight = 5
 url = "https://alexdjalali.github.io/blog/index.xml"
 rel = "alternate"
 type = "application/rss+xml"
+
+[related]
+  includeNewer = true
+  threshold = 40
+  toLower = true
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+  [[related.indices]]
+    name = "date"
+    weight = 30

@@ -1,0 +1,14 @@
+<div class="share-buttons">
+  <button class="share-btn" id="copy-link-btn" data-url="{{ .Permalink }}">
+    <i class="fa-solid fa-link" aria-hidden="true"></i>
+    <span id="copy-link-text">Copy Link</span>
+  </button>
+  <a class="share-btn" href="https://twitter.com/intent/tweet?url={{ .Permalink | urlquery }}&text={{ .Title | urlquery }}" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+    Twitter
+  </a>
+  <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink | urlquery }}" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+    LinkedIn
+  </a>
+</div>
