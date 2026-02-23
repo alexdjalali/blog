@@ -145,10 +145,51 @@
   min-width: 0; /* prevent grid blowout */
 }
 
+/* CV page top-level heading (Resume) */
+.cv-page > article > h2 {
+  position: relative;
+  border-bottom: none;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.3em;
+}
+
+.cv-page > article > h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #000 0%, #922b21 20%, #c0392b 35%, #e74c3c 50%,
+    #c0392b 65%, #922b21 80%, #000 100%
+  );
+  background-size: 200% 100%;
+  animation: gradient-slide 3s linear infinite;
+}
+
 .cv-section h2 {
-  border-bottom: 2px solid #000;
+  position: relative;
+  border-bottom: none;
   padding-bottom: 0.1em;
   margin-bottom: 0.3em;
+}
+
+.cv-section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #000 0%, #922b21 20%, #c0392b 35%, #e74c3c 50%,
+    #c0392b 65%, #922b21 80%, #000 100%
+  );
+  background-size: 200% 100%;
+  animation: gradient-slide 3s linear infinite;
 }
 
 /* Entry cards */
@@ -350,6 +391,15 @@ body.colorscheme-dark .learn-more:active {
   margin-top: 0;
 }
 
+/* Indent and space out awards list items */
+.honors-group .cv-list {
+  margin-left: 1.2em;
+}
+
+.honors-group .cv-list li {
+  margin-bottom: 0.45em;
+}
+
 /* Honors / Publications list */
 .cv-list {
   list-style: none;
@@ -360,7 +410,7 @@ body.colorscheme-dark .learn-more:active {
 .cv-list li {
   position: relative;
   padding-left: 1.6em;
-  margin-bottom: 0;
+  margin-bottom: 0.4em;
   font-size: 0.82em;
   line-height: 1.3;
   color: #555;
@@ -409,9 +459,26 @@ body.colorscheme-dark .learn-more:active {
 }
 
 .cv-skills h2 {
-  border-bottom: 2px solid #000;
+  position: relative;
+  border-bottom: none;
   padding-bottom: 0.2em;
   margin-bottom: 0.5em;
+}
+
+.cv-skills h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #000 0%, #922b21 20%, #c0392b 35%, #e74c3c 50%,
+    #c0392b 65%, #922b21 80%, #000 100%
+  );
+  background-size: 200% 100%;
+  animation: gradient-slide 3s linear infinite;
 }
 
 .cv-skills h3 {
@@ -476,9 +543,26 @@ body.colorscheme-dark .cv-tagline {
 }
 
 .cv-research h2 {
-  border-bottom: 2px solid #000;
+  position: relative;
+  border-bottom: none;
   padding-bottom: 0.2em;
   margin-bottom: 0.5em;
+}
+
+.cv-research h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #000 0%, #922b21 20%, #c0392b 35%, #e74c3c 50%,
+    #c0392b 65%, #922b21 80%, #000 100%
+  );
+  background-size: 200% 100%;
+  animation: gradient-slide 3s linear infinite;
 }
 
 /* Print styles */
@@ -596,10 +680,17 @@ body.colorscheme-dark .skill-tag:hover {
   border-color: #c0392b;
 }
 
-body.colorscheme-dark .cv-section h2,
-body.colorscheme-dark .cv-skills h2,
-body.colorscheme-dark .cv-research h2 {
-  border-bottom-color: #ddd;
+body.colorscheme-dark .cv-page > article > h2::after,
+body.colorscheme-dark .cv-section h2::after,
+body.colorscheme-dark .cv-skills h2::after,
+body.colorscheme-dark .cv-research h2::after {
+  background: linear-gradient(
+    90deg,
+    #ddd 0%, #cd6155 20%, #e74c3c 35%, #f1948a 50%,
+    #e74c3c 65%, #cd6155 80%, #ddd 100%
+  );
+  background-size: 200% 100%;
+  animation: gradient-slide 3s linear infinite;
 }
 
 /* Auto mode */
@@ -627,7 +718,16 @@ body.colorscheme-dark .cv-research h2 {
   body.colorscheme-auto .cv-list li { color: #ccc; }
   body.colorscheme-auto .skill-tag { background-color: #ddd; color: #212121; border-color: #bbb; }
   body.colorscheme-auto .skill-tag:hover { border-color: #c0392b; }
-  body.colorscheme-auto .cv-section h2,
-  body.colorscheme-auto .cv-skills h2,
-  body.colorscheme-auto .cv-research h2 { border-bottom-color: #ddd; }
+  body.colorscheme-auto .cv-page > article > h2::after,
+  body.colorscheme-auto .cv-section h2::after,
+  body.colorscheme-auto .cv-skills h2::after,
+  body.colorscheme-auto .cv-research h2::after {
+    background: linear-gradient(
+      90deg,
+      #ddd 0%, #cd6155 20%, #e74c3c 35%, #f1948a 50%,
+      #e74c3c 65%, #cd6155 80%, #ddd 100%
+    );
+    background-size: 200% 100%;
+    animation: gradient-slide 3s linear infinite;
+  }
 }

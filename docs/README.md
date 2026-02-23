@@ -6,10 +6,10 @@ Project documentation for the Blog.
 
 | Directory/File | Description                                              |
 | -------------- | -------------------------------------------------------- |
-| `adr/`         | Architecture Decision Records (3 ADRs)                   |
+| `adr/`         | Architecture Decision Records (5 ADRs)                   |
 | `spec/epics/`  | Epic specification files (7 epics)                       |
 | `spec/stories/`| Stories with acceptance criteria (16 stories)            |
-| `spec/plans/`  | Implementation plans (5 plans, all verified)             |
+| `spec/plans/`  | Implementation plans (6 plans, all verified)             |
 | `spec/arch/`   | Architecture diagrams                                    |
 
 ## Epic Overview
@@ -32,17 +32,20 @@ Project documentation for the Blog.
 | ---- | -------------------------------------------- | -------- |
 | 0001 | Blog Design — White/Black Academic Theme     | Accepted |
 | 0002 | Standard Blog Features                       | Accepted |
-| 0003 | Timeline Components & UI Refinements         | Proposed |
+| 0003 | Timeline Components & UI Refinements         | Accepted |
+| 0004 | Publication Abstract Toggle                  | Accepted |
+| 0005 | Publication & Site-Wide UI Refinements       | Accepted |
 
 ## Plan Index
 
-| Plan                                | Epic(s) | Status   |
-| ----------------------------------- | ------- | -------- |
-| 2026-02-21 Personal Blog            | 1--4    | Verified |
-| 2026-02-22 SCSS Color Overrides     | 5       | Verified |
-| 2026-02-22 Visual QA                | 5       | Verified |
-| 2026-02-22 Standard Blog Features   | 6       | Verified |
-| 2026-02-23 Timeline & UI Refinements| 7       | Verified |
+| Plan                                    | Epic(s) | Status   |
+| --------------------------------------- | ------- | -------- |
+| 2026-02-21 Personal Blog                | 1--4    | Verified |
+| 2026-02-22 SCSS Color Overrides         | 5       | Verified |
+| 2026-02-22 Visual QA                    | 5       | Verified |
+| 2026-02-22 Standard Blog Features       | 6       | Verified |
+| 2026-02-23 Timeline & UI Refinements    | 7       | Verified |
+| 2026-02-23 Publication Abstract Toggle  | —       | Verified |
 
 ## Architecture
 

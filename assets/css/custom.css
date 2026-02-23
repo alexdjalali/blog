@@ -16,6 +16,12 @@ button:focus-visible {
   }
 }
 
+/* Animated red gradient underline for section headings */
+@keyframes gradient-slide {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
 /* AI badge in post metadata */
 .claude-badge {
   font-size: 0.85em;
@@ -213,9 +219,48 @@ a:hover {
 .content .page h1.title {
   font-size: 2.4rem;
   font-weight: 400;
-  border-bottom: 2px solid #000;
+  position: relative;
+  border-bottom: none;
   padding-bottom: 0.2em;
   margin-bottom: 0.3em;
+}
+
+.content .page h1.title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #000 0%, #922b21 20%, #c0392b 35%, #e74c3c 50%,
+    #c0392b 65%, #922b21 80%, #000 100%
+  );
+  background-size: 200% 100%;
+  animation: gradient-slide 3s linear infinite;
+}
+
+body.colorscheme-dark .content .page h1.title::after {
+  background: linear-gradient(
+    90deg,
+    #ddd 0%, #cd6155 20%, #e74c3c 35%, #f1948a 50%,
+    #e74c3c 65%, #cd6155 80%, #ddd 100%
+  );
+  background-size: 200% 100%;
+  animation: gradient-slide 3s linear infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .content .page h1.title::after {
+    background: linear-gradient(
+      90deg,
+      #ddd 0%, #cd6155 20%, #e74c3c 35%, #f1948a 50%,
+      #e74c3c 65%, #cd6155 80%, #ddd 100%
+    );
+    background-size: 200% 100%;
+    animation: gradient-slide 3s linear infinite;
+  }
 }
 
 .content .page h2 {
@@ -225,13 +270,97 @@ a:hover {
   margin-bottom: 0.3em;
 }
 
-body.colorscheme-dark .content .page h1.title {
-  border-bottom-color: #ddd;
+/* About page — animated gradient underline on all headings */
+.about-page h2,
+.about-page h3 {
+  position: relative;
+  border-bottom: none;
+  padding-bottom: 0.2em;
+}
+
+.about-page h2::after,
+.about-page h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #000 0%, #922b21 20%, #c0392b 35%, #e74c3c 50%,
+    #c0392b 65%, #922b21 80%, #000 100%
+  );
+  background-size: 200% 100%;
+  animation: gradient-slide 3s linear infinite;
+}
+
+body.colorscheme-dark .about-page h2::after,
+body.colorscheme-dark .about-page h3::after {
+  background: linear-gradient(
+    90deg,
+    #ddd 0%, #cd6155 20%, #e74c3c 35%, #f1948a 50%,
+    #e74c3c 65%, #cd6155 80%, #ddd 100%
+  );
+  background-size: 200% 100%;
+  animation: gradient-slide 3s linear infinite;
 }
 
 @media (prefers-color-scheme: dark) {
-  body.colorscheme-auto .content .page h1.title {
-    border-bottom-color: #ddd;
+  body.colorscheme-auto .about-page h2::after,
+  body.colorscheme-auto .about-page h3::after {
+    background: linear-gradient(
+      90deg,
+      #ddd 0%, #cd6155 20%, #e74c3c 35%, #f1948a 50%,
+      #e74c3c 65%, #cd6155 80%, #ddd 100%
+    );
+    background-size: 200% 100%;
+    animation: gradient-slide 3s linear infinite;
+  }
+}
+
+/* Blog post — animated gradient underline on subheadings */
+.post h2 {
+  position: relative;
+  border-bottom: none;
+  padding-bottom: 0.2em;
+}
+
+.post h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #000 0%, #922b21 20%, #c0392b 35%, #e74c3c 50%,
+    #c0392b 65%, #922b21 80%, #000 100%
+  );
+  background-size: 200% 100%;
+  animation: gradient-slide 3s linear infinite;
+}
+
+body.colorscheme-dark .post h2::after {
+  background: linear-gradient(
+    90deg,
+    #ddd 0%, #cd6155 20%, #e74c3c 35%, #f1948a 50%,
+    #e74c3c 65%, #cd6155 80%, #ddd 100%
+  );
+  background-size: 200% 100%;
+  animation: gradient-slide 3s linear infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .post h2::after {
+    background: linear-gradient(
+      90deg,
+      #ddd 0%, #cd6155 20%, #e74c3c 35%, #f1948a 50%,
+      #e74c3c 65%, #cd6155 80%, #ddd 100%
+    );
+    background-size: 200% 100%;
+    animation: gradient-slide 3s linear infinite;
   }
 }
 
@@ -344,48 +473,190 @@ body.colorscheme-dark .cv-list .pub-abstract {
   }
 }
 
-/* BibTeX download links */
-.bib-link {
-  font-size: 0.85em;
-  padding: 0.25em 0.6em;
-  border: 1px solid #bbb;
-  border-radius: 4px;
-  margin-left: 0.6em;
-  color: #666 !important;
-  text-decoration: none !important;
-  background: #fafafa;
-  transition: all 0.2s ease;
+/* Publication citation part hover — three red gradations */
+.pub-authors,
+.pub-title,
+.pub-extra {
+  transition: color 0.2s ease;
 }
 
-.bib-link:hover {
-  border-color: #c0392b;
+.cv-list li:hover .pub-authors,
+.cv-list li:hover .pub-authors a:not(.bib-link):not(.abstract-toggle) {
+  color: #e74c3c;
+}
+
+.cv-list li:hover .pub-title,
+.cv-list li:hover .pub-title a {
   color: #c0392b !important;
-  background: #f0f0f0;
-  transform: translateY(-1px);
 }
 
-body.colorscheme-dark .bib-link {
-  border-color: #666;
-  color: #999 !important;
-  background: #2a2a2a;
+.cv-list li:hover .pub-extra,
+.cv-list li:hover .pub-extra a:not(.bib-link):not(.abstract-toggle) {
+  color: #922b21;
 }
 
-body.colorscheme-dark .bib-link:hover {
-  border-color: #c0392b;
-  color: #c0392b !important;
-  background: #333;
+.cv-list li:hover .pub-extra em {
+  color: #922b21;
+}
+
+/* Dark mode hover gradations */
+body.colorscheme-dark .cv-list li:hover .pub-authors,
+body.colorscheme-dark .cv-list li:hover .pub-authors a:not(.bib-link):not(.abstract-toggle) {
+  color: #f1948a;
+}
+
+body.colorscheme-dark .cv-list li:hover .pub-title,
+body.colorscheme-dark .cv-list li:hover .pub-title a {
+  color: #e74c3c !important;
+}
+
+body.colorscheme-dark .cv-list li:hover .pub-extra,
+body.colorscheme-dark .cv-list li:hover .pub-extra a:not(.bib-link):not(.abstract-toggle),
+body.colorscheme-dark .cv-list li:hover .pub-extra em {
+  color: #cd6155;
 }
 
 @media (prefers-color-scheme: dark) {
-  body.colorscheme-auto .bib-link {
-    border-color: #666;
-    color: #999 !important;
+  body.colorscheme-auto .cv-list li:hover .pub-authors,
+  body.colorscheme-auto .cv-list li:hover .pub-authors a:not(.bib-link):not(.abstract-toggle) {
+    color: #f1948a;
+  }
+  body.colorscheme-auto .cv-list li:hover .pub-title,
+  body.colorscheme-auto .cv-list li:hover .pub-title a {
+    color: #e74c3c !important;
+  }
+  body.colorscheme-auto .cv-list li:hover .pub-extra,
+  body.colorscheme-auto .cv-list li:hover .pub-extra a:not(.bib-link):not(.abstract-toggle),
+  body.colorscheme-auto .cv-list li:hover .pub-extra em {
+    color: #cd6155;
+  }
+}
+
+/* Publication abstract collapse/expand */
+.cv-list .pub-abstract.collapsed {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin: 0;
+  padding-left: 0;
+  border-left-width: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease, margin 0.3s ease, border-left-width 0.2s ease;
+}
+
+.cv-list .pub-abstract:not(.collapsed) {
+  max-height: 600px;
+  opacity: 1;
+  transition: max-height 0.4s ease, opacity 0.3s ease 0.1s;
+}
+
+/* Abstract toggle button */
+/* Shared pill style for BibTeX and Abstract buttons */
+.bib-link,
+.abstract-toggle {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8em;
+  text-decoration: none !important;
+  padding: 0.2em 0.6em;
+  border: 1px solid;
+  border-radius: 4px;
+  margin-left: 0.4em;
+  cursor: pointer;
+  background: #fafafa;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+/* BibTeX — blue */
+.bib-link {
+  color: #2471a3 !important;
+  border-color: #2471a3;
+}
+
+.bib-link:hover {
+  color: #fff !important;
+  background-color: #2471a3;
+  border-color: #2471a3;
+  transform: translateY(-1px);
+}
+
+/* Abstract — red */
+.abstract-toggle {
+  color: #c0392b;
+  border-color: #c0392b;
+}
+
+.abstract-toggle:hover {
+  color: #fff;
+  background-color: #c0392b;
+  border-color: #c0392b;
+  transform: translateY(-1px);
+}
+
+.bib-link:active,
+.abstract-toggle:active {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Dark mode */
+body.colorscheme-dark .bib-link,
+body.colorscheme-dark .abstract-toggle {
+  background: #2a2a2a;
+}
+
+body.colorscheme-dark .bib-link {
+  color: #5dade2 !important;
+  border-color: #5dade2;
+}
+
+body.colorscheme-dark .bib-link:hover {
+  color: #fff !important;
+  background-color: #2471a3;
+  border-color: #2471a3;
+}
+
+body.colorscheme-dark .abstract-toggle {
+  color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+body.colorscheme-dark .abstract-toggle:hover {
+  color: #fff;
+  background-color: #c0392b;
+  border-color: #c0392b;
+}
+
+body.colorscheme-dark .bib-link:active,
+body.colorscheme-dark .abstract-toggle:active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Auto dark mode */
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .bib-link,
+  body.colorscheme-auto .abstract-toggle {
     background: #2a2a2a;
   }
+  body.colorscheme-auto .bib-link {
+    color: #5dade2 !important;
+    border-color: #5dade2;
+  }
   body.colorscheme-auto .bib-link:hover {
+    color: #fff !important;
+    background-color: #2471a3;
+    border-color: #2471a3;
+  }
+  body.colorscheme-auto .abstract-toggle {
+    color: #e74c3c;
+    border-color: #e74c3c;
+  }
+  body.colorscheme-auto .abstract-toggle:hover {
+    color: #fff;
+    background-color: #c0392b;
     border-color: #c0392b;
-    color: #c0392b !important;
-    background: #333;
+  }
+  body.colorscheme-auto .bib-link:active,
+  body.colorscheme-auto .abstract-toggle:active {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -870,11 +1141,11 @@ body.colorscheme-dark .footer-copy {
 }
 
 /* Content link styling */
-.content .page a:not(.navigation-link):not(.bib-link):not(.code-copy-btn):not(.code-collapse-toggle):not(.learn-more) {
+.content .page a:not(.navigation-link):not(.bib-link):not(.abstract-toggle):not(.code-copy-btn):not(.code-collapse-toggle):not(.learn-more) {
   text-decoration: none !important;
 }
 
-.content .page a:not(.navigation-link):not(.bib-link):hover {
+.content .page a:not(.navigation-link):not(.bib-link):not(.abstract-toggle):hover {
   color: #c0392b !important;
 }
 
@@ -1144,11 +1415,30 @@ body.colorscheme-dark .about-link:hover {
   margin-left: -50vw;
   padding-left: calc(50vw - 50%);
   padding-right: calc(50vw - 50%);
-  border-top: 2px solid #000;
+  border-top: none;
 }
 
 .tech-section h2 {
   text-align: center;
+  position: relative;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+.tech-section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #000 0%, #922b21 20%, #c0392b 35%, #e74c3c 50%,
+    #c0392b 65%, #922b21 80%, #000 100%
+  );
+  background-size: 200% 100%;
+  animation: gradient-slide 3s linear infinite;
 }
 
 .tech-section h3 {
@@ -1162,13 +1452,25 @@ body.colorscheme-dark .about-link:hover {
   border-bottom: none;
 }
 
-body.colorscheme-dark .tech-section {
-  border-top-color: #ddd;
+body.colorscheme-dark .tech-section h2::after {
+  background: linear-gradient(
+    90deg,
+    #ddd 0%, #cd6155 20%, #e74c3c 35%, #f1948a 50%,
+    #e74c3c 65%, #cd6155 80%, #ddd 100%
+  );
+  background-size: 200% 100%;
+  animation: gradient-slide 3s linear infinite;
 }
 
 @media (prefers-color-scheme: dark) {
-  body.colorscheme-auto .tech-section {
-    border-top-color: #ddd;
+  body.colorscheme-auto .tech-section h2::after {
+    background: linear-gradient(
+      90deg,
+      #ddd 0%, #cd6155 20%, #e74c3c 35%, #f1948a 50%,
+      #e74c3c 65%, #cd6155 80%, #ddd 100%
+    );
+    background-size: 200% 100%;
+    animation: gradient-slide 3s linear infinite;
   }
 }
 
@@ -1644,4 +1946,19 @@ body.colorscheme-dark .search-result-desc {
 @media (hover: none) and (pointer: coarse) {
   .post-card, .footer-social a { transition: none; }
   .bib-link, .post-card-tag { padding: 0.35em 0.7em; }
+}
+
+/* Print styles for publication abstracts */
+@media print {
+  .cv-list .pub-abstract.collapsed {
+    max-height: none;
+    overflow: visible;
+    opacity: 1;
+    margin: 0.35em 0 0.4em 0;
+    padding-left: 0.5em;
+    border-left-width: 2px;
+  }
+  .abstract-toggle {
+    display: none !important;
+  }
 }

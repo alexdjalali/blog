@@ -49,9 +49,9 @@ images:
 <div id="publications" class="cv-section">
 <h2>Selected Publications</h2>
 <ul class="cv-list">
-  <li><strong>Djalali, AJ</strong>, Vidya Setlur, et al. <a href="https://dl.acm.org/doi/10.1145/3301275.3302270">"Inferencing underspecified natural language utterances in visual analysis."</a> <em>Proceedings of the 24th International Conference on Intelligent User Interfaces</em>. 2019.</li>
-  <li><strong>Djalali, AJ</strong>. <a href="https://link.springer.com/article/10.1007/s10849-017-9248-0">"A constructive solution to the ranking problem in Partial Order Optimality Theory."</a> <em>Journal of Logic, Language &amp; Information</em>. 2017.</li>
-  <li><strong>Djalali, AJ</strong>. <a href="https://aclanthology.org/2014.lilt-9.11/">"Synthetic logic."</a> <em>Linguistic Issues in Language Technology</em>. 2014.</li>
+  <li><span class="pub-authors"><strong>Djalali, AJ</strong>, Vidya Setlur, et al.</span> <span class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3301275.3302270" target="_blank" rel="noopener noreferrer">"Inferencing underspecified natural language utterances in visual analysis."</a></span> <span class="pub-extra"><em>Proceedings of the 24th International Conference on Intelligent User Interfaces</em>. 2019.</span></li>
+  <li><span class="pub-authors"><strong>Djalali, AJ</strong>.</span> <span class="pub-title"><a href="https://link.springer.com/article/10.1007/s10849-017-9248-0" target="_blank" rel="noopener noreferrer">"A constructive solution to the ranking problem in Partial Order Optimality Theory."</a></span> <span class="pub-extra"><em>Journal of Logic, Language &amp; Information</em>. 2017.</span></li>
+  <li><span class="pub-authors"><strong>Djalali, AJ</strong>.</span> <span class="pub-title"><a href="https://aclanthology.org/2014.lilt-9.11/" target="_blank" rel="noopener noreferrer">"Synthetic logic."</a></span> <span class="pub-extra"><em>Linguistic Issues in Language Technology</em>. 2014.</span></li>
 </ul>
 <p class="cv-list-more"><a href="/blog/publications/">View all publications &amp; patents &rarr;</a></p>
 </div>

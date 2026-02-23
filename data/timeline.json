@@ -8,7 +8,7 @@
     "logo": "images/logos/northwestern.png",
     "url": "https://www.northwestern.edu/",
     "summary": "Studied linguistics with a focus on formal semantics, pragmatics, phonology, and syntax. Graduated Cum Laude and was inducted into Phi Beta Kappa Honor Society. Received the Demoz Paper Award from the Linguistics Department.",
-    "description": "<ul><li>Focus on formal semantics, pragmatics, phonology, and syntax</li><li>Cum Laude, <a href=\"https://www.pbk.org/\">Phi Beta Kappa</a> Honor Society</li><li>Demoz Paper Award, Linguistics Department</li><li>GPA: 3.81</li></ul>"
+    "description": "<ul><li>Focus on formal semantics, pragmatics, phonology, and syntax</li><li>Cum Laude, <a href=\"https://www.pbk.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Phi Beta Kappa</a> Honor Society</li><li>Demoz Paper Award, Linguistics Department</li><li>GPA: 3.81</li></ul>"
   },
   {
     "startdate": "2008-08-01",
@@ -19,7 +19,7 @@
     "logo": "images/logos/amsterdam.png",
     "url": "https://www.uva.nl/en",
     "summary": "Awarded a Fulbright Scholarship to study at the Institute for Logic, Language and Computation (ILLC) in Amsterdam. Studied mathematical logic, philosophy of language, and formal linguistics. Published research on probabilistic inferences in dynamic semantics.",
-    "description": "<ul><li><a href=\"https://fulbrightscholars.org/\">Fulbright</a> Scholar at the <a href=\"https://www.illc.uva.nl/\">Institute for Logic, Language and Computation</a> (ILLC)</li><li>Studied mathematical logic, philosophy of language, and formal linguistics</li><li>Published &ldquo;Probabilistic inferences in dynamic semantics&rdquo; (SoLL 2009)</li></ul>"
+    "description": "<ul><li><a href=\"https://fulbrightscholars.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Fulbright</a> Scholar at the <a href=\"https://www.illc.uva.nl/\" target=\"_blank\" rel=\"noopener noreferrer\">Institute for Logic, Language and Computation</a> (ILLC)</li><li>Studied mathematical logic, philosophy of language, and formal linguistics</li><li>Published &ldquo;Probabilistic inferences in dynamic semantics&rdquo; (SoLL 2009)</li></ul>"
   },
   {
     "startdate": "2009-09-01",
@@ -30,7 +30,7 @@
     "logo": "images/logos/standford.png",
     "url": "https://www.stanford.edu/",
     "summary": "Completed a PhD in Linguistics with a dissertation on the syntax and semantics of comparative constructions in English. Published 5 peer-reviewed papers, including collaborative work with Christopher Potts on natural logic. Received a Phi Beta Kappa Fellowship in 2014.",
-    "description": "<ul><li>Dissertation: &ldquo;<a href=\"https://stacks.stanford.edu/file/druid:zd767rn6093/djalali_diss_final-augmented.pdf\">The syntax and semantics of ordinary comparative constructions in English</a>&rdquo;</li><li>Published 5 peer-reviewed papers, including work with <a href=\"https://web.stanford.edu/~cgpotts/\">Christopher Potts</a> on natural logic</li><li><a href=\"https://www.pbk.org/\">Phi Beta Kappa</a> Fellowship (2014)</li><li>Focus on formal semantics, mathematical linguistics, syntax, and phonology</li></ul>"
+    "description": "<ul><li>Dissertation: &ldquo;<a href=\"https://stacks.stanford.edu/file/druid:zd767rn6093/djalali_diss_final-augmented.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">The syntax and semantics of ordinary comparative constructions in English</a>&rdquo;</li><li>Published 5 peer-reviewed papers, including work with <a href=\"https://web.stanford.edu/~cgpotts/\" target=\"_blank\" rel=\"noopener noreferrer\">Christopher Potts</a> on natural logic</li><li><a href=\"https://www.pbk.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Phi Beta Kappa</a> Fellowship (2014)</li><li>Focus on formal semantics, mathematical linguistics, syntax, and phonology</li></ul>"
   },
   {
     "startdate": "2014-06-01",
@@ -41,7 +41,7 @@
     "logo": "images/logos/nuance.png",
     "url": "https://www.nuance.com/",
     "summary": "Research intern in Nuance's Natural Language Understanding group. Developed an NLU prototype based on Synthetic Logic, bridging formal linguistics research with industrial speech and language technology.",
-    "description": "<ul><li>Developed a Natural Language Understanding prototype based on <a href=\"https://aclanthology.org/2014.lilt-9.11/\">Synthetic Logic</a></li><li>Research internship in the NLU group</li></ul>"
+    "description": "<ul><li>Developed a Natural Language Understanding prototype based on <a href=\"https://aclanthology.org/2014.lilt-9.11/\" target=\"_blank\" rel=\"noopener noreferrer\">Synthetic Logic</a></li><li>Research internship in the NLU group</li></ul>"
   },
   {
     "startdate": "2014-11-01",
@@ -52,7 +52,7 @@
     "logo": "images/logos/cleargraph.png",
     "url": "https://www.crunchbase.com/organization/cleargraph",
     "summary": "Built the core NLP pipeline that translated natural language questions into structured database queries. Led development of a natural language interface for querying arbitrary databases. The company won the Celent Model Bank Award in 2017 and was acquired by Tableau.",
-    "description": "<ul><li>Built the core NLP pipeline for translating natural language into structured database queries</li><li>Led the development of a natural language interface for querying arbitrary databases</li><li>Celent Model Bank Award (2017)</li><li>Acquired by <a href=\"https://www.tableau.com/\">Tableau</a></li></ul>"
+    "description": "<ul><li>Built the core NLP pipeline for translating natural language into structured database queries</li><li>Led the development of a natural language interface for querying arbitrary databases</li><li>Celent Model Bank Award (2017)</li><li>Acquired by <a href=\"https://www.tableau.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Tableau</a></li></ul>"
   },
   {
     "startdate": "2017-08-01",
@@ -63,7 +63,7 @@
     "logo": "images/logos/tableau.png",
     "url": "https://www.tableau.com/",
     "summary": "Created the natural language technology behind Tableau's Ask Data feature, enabling users to query data visualizations in plain English. Scaled NLP infrastructure with ElasticSearch-based semantic indexing. Published peer-reviewed research and was awarded 9 patents in natural language interfaces for data visualization.",
-    "description": "<ul><li>Created the natural language technology behind Tableau&rsquo;s Ask Data feature</li><li>Scaled NLP infrastructure including ElasticSearch-based semantic indexing</li><li>Published &ldquo;<a href=\"https://dl.acm.org/doi/10.1145/3301275.3302270\">Inferencing underspecified natural language utterances in visual analysis</a>&rdquo; (IUI 2019)</li><li>9 <a href=\"/blog/publications/#patents\">patents</a> in natural language interfaces for data visualization</li></ul>"
+    "description": "<ul><li>Created the natural language technology behind Tableau&rsquo;s Ask Data feature</li><li>Scaled NLP infrastructure including ElasticSearch-based semantic indexing</li><li>Published &ldquo;<a href=\"https://dl.acm.org/doi/10.1145/3301275.3302270\" target=\"_blank\" rel=\"noopener noreferrer\">Inferencing underspecified natural language utterances in visual analysis</a>&rdquo; (IUI 2019)</li><li>9 <a href=\"/blog/publications/#patents\">patents</a> in natural language interfaces for data visualization</li></ul>"
   },
   {
     "startdate": "2020-06-01",
@@ -74,7 +74,7 @@
     "logo": "images/logos/salesforce.png",
     "url": "https://www.salesforce.com/",
     "summary": "Led the integration of Tableau's Ask Data across multiple Salesforce clouds and represented Tableau on Salesforce's North Star AI council. Architected a next-generation analytics platform spanning multiple clouds. Led the integration of Tableau-acquired Narrative Science into the broader ecosystem and contributed to the CRMA database and query engine.",
-    "description": "<ul><li>Led initiative to integrate Tableau Ask Data across Salesforce clouds</li><li>Tableau representative to Salesforce&rsquo;s North Star AI council</li><li>Architected next-generation analytics platform spanning multiple clouds</li><li>Led integration of Tableau-acquired <a href=\"https://en.wikipedia.org/wiki/Narrative_Science\">Narrative Science</a> into the ecosystem</li><li>CRMA database and query engine</li></ul>"
+    "description": "<ul><li>Led initiative to integrate Tableau Ask Data across Salesforce clouds</li><li>Tableau representative to Salesforce&rsquo;s North Star AI council</li><li>Architected next-generation analytics platform spanning multiple clouds</li><li>Led integration of Tableau-acquired <a href=\"https://en.wikipedia.org/wiki/Narrative_Science\" target=\"_blank\" rel=\"noopener noreferrer\">Narrative Science</a> into the ecosystem</li><li>CRMA database and query engine</li></ul>"
   },
   {
     "startdate": "2023-05-01",
@@ -85,7 +85,7 @@
     "logo": "images/logos/panda.png",
     "url": "https://www.perceptivepanda.com/",
     "summary": "Co-founded an AI-powered enterprise feedback platform that was acquired by Zapier. Raised institutional pre-seed funding and was accepted into the StartX '24 fall cohort. Designed and built the platform from the ground up using Go, Python, and Kubernetes on AWS.",
-    "description": "<ul><li>Co-founded AI-powered enterprise feedback platform; acquired by <a href=\"https://zapier.com/\">Zapier</a></li><li>Raised institutional pre-seed funding</li><li>Accepted into <a href=\"https://startx.com/\">StartX</a> &rsquo;24 fall cohort</li><li>Designed and built platform in Go, Python, and Kubernetes on AWS</li></ul>"
+    "description": "<ul><li>Co-founded AI-powered enterprise feedback platform; acquired by <a href=\"https://zapier.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Zapier</a></li><li>Raised institutional pre-seed funding</li><li>Accepted into <a href=\"https://startx.com/\" target=\"_blank\" rel=\"noopener noreferrer\">StartX</a> &rsquo;24 fall cohort</li><li>Designed and built platform in Go, Python, and Kubernetes on AWS</li></ul>"
   },
   {
     "startdate": "2024-01-01",

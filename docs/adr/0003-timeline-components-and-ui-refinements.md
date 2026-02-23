@@ -1,7 +1,7 @@
 # ADR-0003: Timeline Components — Modal Expansion and Color Gradient Refinements
 
 **Date**: 2026-02-23
-**Status**: Proposed
+**Status**: Accepted
 **Deciders**: Alex Djalali
 
 ## Context

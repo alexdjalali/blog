@@ -25,6 +25,10 @@ AI assistance does not mean I typed a prompt and published whatever came back. I
 
 The site itself — layout, styling, JavaScript, and infrastructure — was also built with AI assistance. The footer credits "a.j.djalali+claude" to reflect this.
 
+### A note on publications
+
+All errors on this site are my own. Author ordering on the [publications](/blog/publications/) page does not reflect the order of authorship in the original print versions — I list myself first for navigability. Consult the linked source or BibTeX entry for canonical citation order.
+
 ### Why disclose this
 
 Because trust matters more than convenience. Readers deserve to know how content was produced. I'd rather over-disclose than leave anyone guessing.
