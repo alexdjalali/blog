@@ -51,26 +51,56 @@
   opacity: 1;
 }
 
-.bar-rect.job {
-  fill: #333;
-}
-
-.bar-rect.education {
-  fill: #999;
-}
-
-/* Bar labels */
-.bar-label {
-  font-size: 11px;
-  fill: #fff;
-  pointer-events: all;
+/* Expand button */
+.timeline-expand-btn {
+  display: block;
+  margin: 0.5em 0 0 auto;
+  padding: 0.3em 1em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75em;
+  color: #777;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 3px;
   cursor: pointer;
-  user-select: none;
+  transition: color 0.2s, border-color 0.2s;
+}
+.timeline-expand-btn:hover {
+  color: #c0392b;
+  border-color: #c0392b;
 }
 
-.bar-rect.education + .bar-label {
-  fill: #fff;
+/* Modal overlay */
+.timeline-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.timeline-modal {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2em;
+  width: 90vw;
+  max-height: 80vh;
+  overflow: auto;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.timeline-modal-close {
+  position: absolute;
+  top: 0.8em; right: 1em;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  line-height: 1;
+}
+.timeline-modal-close:hover { color: #c0392b; }
 
 /* Tooltip — appended to body so it's never clipped */
 .tl-tooltip {
@@ -84,41 +114,12 @@
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.15s;
-  z-index: 9999;
+  z-index: 10001;
   max-width: 360px;
   white-space: normal;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-/* Legend */
-.timeline-legend {
-  display: flex;
-  gap: 1.5em;
-  margin-top: 0.5em;
-  font-size: 0.8em;
-  color: #666;
-}
-
-.timeline-legend span {
-  display: flex;
-  align-items: center;
-  gap: 0.4em;
-}
-
-.legend-swatch {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 3px;
-}
-
-.legend-swatch.job {
-  background-color: #333;
-}
-
-.legend-swatch.education {
-  background-color: #999;
-}
 
 /* Two-column layout for Experience + Education */
 .cv-columns {
@@ -517,16 +518,17 @@ body.colorscheme-dark .cv-tagline {
 }
 
 /* Dark mode support */
-body.colorscheme-dark .bar-rect.job {
-  fill: #5bc0de;
+body.colorscheme-dark .timeline-expand-btn {
+  color: #aaa;
+  border-color: #555;
 }
 
-body.colorscheme-dark .bar-rect.education {
-  fill: #8dd4e8;
+body.colorscheme-dark .timeline-modal {
+  background: #1a1a1a;
 }
 
-body.colorscheme-dark .bar-label {
-  fill: #111;
+body.colorscheme-dark .timeline-modal-close {
+  color: #aaa;
 }
 
 body.colorscheme-dark .grid-line {
@@ -551,8 +553,7 @@ body.colorscheme-dark .tl-tooltip {
   color: #111;
 }
 
-body.colorscheme-dark .cv-entry h3 b,
-body.colorscheme-dark .timeline-legend {
+body.colorscheme-dark .cv-entry h3 b {
   color: #aaa;
 }
 
@@ -601,27 +602,18 @@ body.colorscheme-dark .cv-research h2 {
   border-bottom-color: #ddd;
 }
 
-body.colorscheme-dark .legend-swatch.job {
-  background-color: #5bc0de;
-}
-
-body.colorscheme-dark .legend-swatch.education {
-  background-color: #8dd4e8;
-}
-
 /* Auto mode */
 @media (prefers-color-scheme: dark) {
-  body.colorscheme-auto .bar-rect.job { fill: #5bc0de; }
-  body.colorscheme-auto .bar-rect.education { fill: #8dd4e8; }
-  body.colorscheme-auto .bar-label { fill: #111; }
+  body.colorscheme-auto .timeline-expand-btn { color: #aaa; border-color: #555; }
+  body.colorscheme-auto .timeline-modal { background: #1a1a1a; }
+  body.colorscheme-auto .timeline-modal-close { color: #aaa; }
   body.colorscheme-auto .grid-line { stroke: #444; }
   body.colorscheme-auto .present-line { stroke: #ddd; }
   body.colorscheme-auto .time-axis path,
   body.colorscheme-auto .time-axis line { stroke: #666; }
   body.colorscheme-auto .time-axis text { fill: #aaa; }
   body.colorscheme-auto .tl-tooltip { background: #eee; color: #111; }
-  body.colorscheme-auto .cv-entry h3 b,
-  body.colorscheme-auto .timeline-legend { color: #aaa; }
+  body.colorscheme-auto .cv-entry h3 b { color: #aaa; }
   body.colorscheme-auto .cv-entry:hover { background: #2a2a2a; }
   body.colorscheme-auto .cv-entry .description,
   body.colorscheme-auto .cv-summary { color: #ccc; }
@@ -638,6 +630,4 @@ body.colorscheme-dark .legend-swatch.education {
   body.colorscheme-auto .cv-section h2,
   body.colorscheme-auto .cv-skills h2,
   body.colorscheme-auto .cv-research h2 { border-bottom-color: #ddd; }
-  body.colorscheme-auto .legend-swatch.job { background-color: #5bc0de; }
-  body.colorscheme-auto .legend-swatch.education { background-color: #8dd4e8; }
 }

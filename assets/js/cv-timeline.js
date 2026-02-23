@@ -15,10 +15,24 @@
   var LANE_PAD = 4;
   var AXIS_HEIGHT = 24;
   var MIN_BAR_WIDTH = 8; // minimum bar width so tiny periods are still hoverable
-  var LABEL_PAD = 12; // horizontal padding inside bar for label fit check
   var MARGIN = { top: 10, right: 20, bottom: AXIS_HEIGHT + 10, left: 20 };
   var x, svg, tooltip;
   var PRESENT = new Date(new Date().getFullYear() + 1, 0, 1); // Jan 1 next year = "Present"
+
+  /* ---- Color gradient ---- */
+  function isDarkMode() {
+    return document.body.classList.contains("colorscheme-dark") ||
+      (document.body.classList.contains("colorscheme-auto") &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
+  }
+
+  function getColorScale() {
+    var start = isDarkMode() ? "#ef9a9a" : "#f4a5a5";
+    var end = isDarkMode() ? "#c0392b" : "#7b1a1a";
+    return d3.scaleSequential()
+      .domain([0, dataset.length - 1])
+      .interpolator(d3.interpolateHsl(start, end));
+  }
 
   /* ---- Assign swim lanes so overlapping bars stack ---- */
   function assignLanes() {
@@ -78,6 +92,7 @@
   /* ---- Draw ---- */
   function draw() {
     var numLanes = assignLanes();
+    var colorScale = getColorScale();
     var containerNode = container.node();
     var containerWidth = containerNode.parentElement.clientWidth || containerNode.clientWidth || 600;
     var svgWidth = containerWidth;
@@ -146,7 +161,8 @@
       .attr("class", "tl-bar");
 
     bars.append("rect")
-      .attr("class", function (d) { return "bar-rect " + d.type; })
+      .attr("class", "bar-rect")
+      .style("fill", function (d, i) { return colorScale(i); })
       .attr("y", function (d) { return d._lane * (LANE_HEIGHT + LANE_PAD); })
       .attr("height", LANE_HEIGHT)
       .attr("rx", 4)
@@ -163,38 +179,8 @@
       .delay(function (d, i) { return i * 60; })
       .attr("width", function (d) { return barWidth(d); });
 
-    // Bar labels — hidden if text doesn't fit
-    var labels = bars.append("text")
-      .attr("class", "bar-label")
-      .attr("x", function (d) { return x(new Date(d.startdate)) + 6; })
-      .attr("y", function (d) { return d._lane * (LANE_HEIGHT + LANE_PAD) + LANE_HEIGHT / 2; })
-      .attr("dy", "0.35em")
-      .text(function (d) { return d.shorttitle; })
-      .style("opacity", 0)
-      .on("click", function (event, d) { scrollToEntry(d); })
-      .on("mouseover", function (event, d) { showTooltip(event, d); highlight(d); })
-      .on("mousemove", function (event) { moveTooltip(event); })
-      .on("mouseout", function () { hideTooltip(); resetHighlight(); });
-
-    // Show labels only if they fit inside the bar
-    labels.each(function (d) {
-      var textWidth = this.getComputedTextLength();
-      var bw = barWidth(d);
-      if (textWidth + LABEL_PAD > bw) {
-        d3.select(this).remove();
-      }
-    });
-
-    labels
-      .transition()
-      .delay(function (d, i) { return i * 60 + 400; })
-      .duration(400)
-      .style("opacity", 1);
-
-    // Legend
-    var legend = container.append("div").attr("class", "timeline-legend");
-    legend.append("span").html('<span class="legend-swatch job"></span> Experience');
-    legend.append("span").html('<span class="legend-swatch education"></span> Education');
+    // Expand button
+    addExpandButton();
 
     // Detail sections
     buildSection("#experience", "job");
@@ -246,18 +232,12 @@
     svg.selectAll(".bar-rect")
       .transition().duration(200)
       .style("opacity", function (dd) { return dd === d ? 1 : 0.25; });
-    svg.selectAll(".bar-label")
-      .transition().duration(200)
-      .style("opacity", function (dd) { return dd === d ? 1 : 0.15; });
   }
 
   function resetHighlight() {
     svg.selectAll(".bar-rect")
       .transition().duration(300)
       .style("opacity", null);
-    svg.selectAll(".bar-label")
-      .transition().duration(300)
-      .style("opacity", 1);
   }
 
   /* ---- Detail sections ---- */
@@ -321,14 +301,184 @@
       });
   }
 
+  /* ---- Expand button ---- */
+  function addExpandButton() {
+    container.select(".timeline-expand-btn").remove();
+    var btn = container.append("button")
+      .attr("class", "timeline-expand-btn")
+      .text("Expand Timeline")
+      .on("click", function () { openModal(); });
+  }
+
+  /* ---- Modal ---- */
+  function openModal() {
+    var MODAL_LANE_HEIGHT = 36;
+    var MODAL_LANE_PAD = 4;
+    var MODAL_LABEL_PAD = 12;
+    var MODAL_MARGIN = { top: 16, right: 30, bottom: AXIS_HEIGHT + 16, left: 30 };
+
+    // Create overlay
+    var overlay = d3.select("body").append("div")
+      .attr("class", "timeline-modal-overlay");
+
+    var modal = overlay.append("div")
+      .attr("class", "timeline-modal");
+
+    modal.append("button")
+      .attr("class", "timeline-modal-close")
+      .html("&times;")
+      .on("click", closeModal);
+
+    // Close on backdrop click
+    overlay.on("click", function (event) {
+      if (event.target === overlay.node()) closeModal();
+    });
+
+    // Close on Escape
+    function onEscape(event) {
+      if (event.key === "Escape") closeModal();
+    }
+    document.addEventListener("keydown", onEscape);
+
+    var modalTooltip = d3.select("body").append("div").attr("class", "tl-tooltip");
+
+    // Render expanded timeline
+    var numLanes = assignLanes();
+    var colorScale = getColorScale();
+    var modalNode = modal.node();
+    var modalWidth = modalNode.clientWidth - MODAL_MARGIN.left - MODAL_MARGIN.right;
+    var modalSvgWidth = modalNode.clientWidth;
+    var modalHeight = numLanes * (MODAL_LANE_HEIGHT + MODAL_LANE_PAD) + MODAL_MARGIN.top + MODAL_MARGIN.bottom;
+
+    var minDate = d3.min(dataset, function (d) { return new Date(d.startdate); });
+    var maxDate = PRESENT;
+
+    var mx = d3.scaleTime().domain([minDate, maxDate]).range([0, modalWidth]);
+
+    function modalBarWidth(d) {
+      var end = d.enddate ? new Date(d.enddate) : PRESENT;
+      return Math.max(mx(end) - mx(new Date(d.startdate)), MIN_BAR_WIDTH);
+    }
+
+    var msvg = modal.append("svg")
+      .attr("width", modalSvgWidth)
+      .attr("height", modalHeight)
+      .attr("class", "timeline-svg");
+
+    var mg = msvg.append("g")
+      .attr("transform", "translate(" + MODAL_MARGIN.left + "," + MODAL_MARGIN.top + ")");
+
+    // Year grid lines
+    var years = d3.timeYears(minDate, maxDate);
+    mg.selectAll(".grid-line")
+      .data(years)
+      .enter()
+      .append("line")
+      .attr("class", "grid-line")
+      .attr("x1", function (d) { return mx(d); })
+      .attr("x2", function (d) { return mx(d); })
+      .attr("y1", 0)
+      .attr("y2", numLanes * (MODAL_LANE_HEIGHT + MODAL_LANE_PAD));
+
+    // Time axis
+    var maxisG = mg.append("g")
+      .attr("class", "time-axis")
+      .attr("transform", "translate(0," + (numLanes * (MODAL_LANE_HEIGHT + MODAL_LANE_PAD) + 4) + ")");
+
+    var fmtYear = d3.timeFormat("%Y");
+    var presentYear = PRESENT.getFullYear();
+    maxisG.call(
+      d3.axisBottom(mx)
+        .ticks(d3.timeYear.every(1))
+        .tickFormat(function (d) {
+          return d.getFullYear() === presentYear ? "Present" : fmtYear(d);
+        })
+        .tickSize(4)
+    );
+
+    // Present marker
+    mg.append("line")
+      .attr("class", "present-line")
+      .attr("x1", mx(PRESENT))
+      .attr("x2", mx(PRESENT))
+      .attr("y1", 0)
+      .attr("y2", numLanes * (MODAL_LANE_HEIGHT + MODAL_LANE_PAD));
+
+    // Bars
+    var mbars = mg.selectAll(".tl-bar")
+      .data(dataset)
+      .enter()
+      .append("g")
+      .attr("class", "tl-bar");
+
+    mbars.append("rect")
+      .attr("class", "bar-rect")
+      .style("fill", function (d, i) { return colorScale(i); })
+      .attr("y", function (d) { return d._lane * (MODAL_LANE_HEIGHT + MODAL_LANE_PAD); })
+      .attr("height", MODAL_LANE_HEIGHT)
+      .attr("rx", 4)
+      .attr("ry", 4)
+      .attr("x", function (d) { return mx(new Date(d.startdate)); })
+      .attr("width", function (d) { return modalBarWidth(d); })
+      .on("click", function (event, d) {
+        closeModal();
+        scrollToEntry(d);
+      })
+      .on("mouseover", function (event, d) {
+        modalTooltip
+          .html("<strong>" + d.title + "</strong><br>" + getDate(d))
+          .style("opacity", 1);
+        modalTooltip.style("left", (event.pageX + 14) + "px").style("top", (event.pageY - 14) + "px");
+        msvg.selectAll(".bar-rect")
+          .transition().duration(200)
+          .style("opacity", function (dd) { return dd === d ? 1 : 0.25; });
+      })
+      .on("mousemove", function (event) {
+        modalTooltip.style("left", (event.pageX + 14) + "px").style("top", (event.pageY - 14) + "px");
+      })
+      .on("mouseout", function () {
+        modalTooltip.style("opacity", 0);
+        msvg.selectAll(".bar-rect")
+          .transition().duration(300)
+          .style("opacity", null);
+      });
+
+    // Labels in modal — show if they fit
+    var mlabels = mbars.append("text")
+      .attr("class", "bar-label")
+      .attr("x", function (d) { return mx(new Date(d.startdate)) + 6; })
+      .attr("y", function (d) { return d._lane * (MODAL_LANE_HEIGHT + MODAL_LANE_PAD) + MODAL_LANE_HEIGHT / 2; })
+      .attr("dy", "0.35em")
+      .style("font-size", "12px")
+      .style("fill", "#fff")
+      .style("pointer-events", "none")
+      .style("user-select", "none")
+      .text(function (d) { return d.shorttitle; });
+
+    mlabels.each(function (d) {
+      var textWidth = this.getComputedTextLength();
+      var bw = modalBarWidth(d);
+      if (textWidth + MODAL_LABEL_PAD > bw) {
+        d3.select(this).remove();
+      }
+    });
+
+    function closeModal() {
+      document.removeEventListener("keydown", onEscape);
+      modalTooltip.remove();
+      overlay.remove();
+    }
+  }
+
   /* ---- Resize ---- */
   function resize() {
     // Remove old elements
     container.select("svg").remove();
-    container.select(".timeline-legend").remove();
+    container.select(".timeline-expand-btn").remove();
     if (tooltip) tooltip.remove();
 
     var numLanes = assignLanes();
+    var colorScale = getColorScale();
     var containerNode = container.node();
     var containerWidth = containerNode.parentElement.clientWidth || containerNode.clientWidth || 600;
     var svgWidth = containerWidth;
@@ -387,7 +537,8 @@
       .attr("class", "tl-bar");
 
     bars.append("rect")
-      .attr("class", function (d) { return "bar-rect " + d.type; })
+      .attr("class", "bar-rect")
+      .style("fill", function (d, i) { return colorScale(i); })
       .attr("y", function (d) { return d._lane * (LANE_HEIGHT + LANE_PAD); })
       .attr("height", LANE_HEIGHT)
       .attr("rx", 4)
@@ -399,28 +550,7 @@
       .on("mousemove", function (event) { moveTooltip(event); })
       .on("mouseout", function () { hideTooltip(); resetHighlight(); });
 
-    var resizeLabels = bars.append("text")
-      .attr("class", "bar-label")
-      .attr("x", function (d) { return x(new Date(d.startdate)) + 6; })
-      .attr("y", function (d) { return d._lane * (LANE_HEIGHT + LANE_PAD) + LANE_HEIGHT / 2; })
-      .attr("dy", "0.35em")
-      .text(function (d) { return d.shorttitle; })
-      .on("click", function (event, d) { scrollToEntry(d); })
-      .on("mouseover", function (event, d) { showTooltip(event, d); highlight(d); })
-      .on("mousemove", function (event) { moveTooltip(event); })
-      .on("mouseout", function () { hideTooltip(); resetHighlight(); });
-
-    resizeLabels.each(function (d) {
-      var textWidth = this.getComputedTextLength();
-      var bw = barWidth(d);
-      if (textWidth + LABEL_PAD > bw) {
-        d3.select(this).remove();
-      }
-    });
-
-    var legend = container.append("div").attr("class", "timeline-legend");
-    legend.append("span").html('<span class="legend-swatch job"></span> Experience');
-    legend.append("span").html('<span class="legend-swatch education"></span> Education');
+    addExpandButton();
   }
 
   /* ---- Scroll-triggered fade-in ---- */

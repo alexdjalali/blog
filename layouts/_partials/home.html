@@ -15,11 +15,11 @@
           <time>{{ .Date.Format "January 2, 2006" }}</time>
           {{ if eq .Params.claude false }}
           <span class="claude-badge claude-badge-no">
-            <i class="fa-solid fa-thumbs-down" aria-hidden="true"></i> AI
+            <i class="fa-solid fa-robot" aria-hidden="true"></i> AI
           </span>
           {{ else }}
           <span class="claude-badge claude-badge-yes">
-            <i class="fa-solid fa-thumbs-up" aria-hidden="true"></i> AI
+            <i class="fa-solid fa-robot" aria-hidden="true"></i> AI
           </span>
           {{ end }}
           {{ with .Params.tags }}
