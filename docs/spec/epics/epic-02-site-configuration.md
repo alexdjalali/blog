@@ -1,6 +1,6 @@
 # Epic 2 — Site Configuration
 
-**Status**: Planning **Stories**: 2.1--2.3 **Points**: 7
+**Status**: Complete **Stories**: 2.1--2.3 **Points**: 7
 
 ## Summary
 

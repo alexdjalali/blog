@@ -1,7 +1,7 @@
 # ADR-0001: Blog Design — White/Black Academic Theme Following blog.martisak.se
 
 **Date**: 2026-02-22
-**Status**: Proposed
+**Status**: Accepted
 **Deciders**: Alex Djalali
 
 ## Context

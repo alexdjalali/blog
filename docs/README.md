@@ -6,28 +6,53 @@ Project documentation for the Blog.
 
 | Directory/File | Description                                              |
 | -------------- | -------------------------------------------------------- |
-| `plans/`       | Implementation plans (spec-driven development)           |
-| `spec/`        | Epic specification files (4 epics covering Epics 1-4)    |
-| `rfp/`         | Planned stories with acceptance criteria (11 stories)    |
-| `adr/`         | Completed story documentation                            |
-| `debug/`       | Debugging guides                                         |
+| `adr/`         | Architecture Decision Records (3 ADRs)                   |
+| `spec/epics/`  | Epic specification files (7 epics)                       |
+| `spec/stories/`| Stories with acceptance criteria (16 stories)            |
+| `spec/plans/`  | Implementation plans (5 plans, all verified)             |
+| `spec/arch/`   | Architecture diagrams                                    |
 
 ## Epic Overview
 
-| Epic | Name                            | Stories  | Points |
-| ---- | ------------------------------- | -------- | ------ |
-| 1    | Project Foundation & Deployment | 1.1--1.3 | 8      |
-| 2    | Site Configuration              | 2.1--2.3 | 7      |
-| 3    | Content Creation                | 3.1--3.4 | 10     |
-| 4    | Launch & Verification           | 4.1      | 3      |
+| Epic | Name                            | Stories  | Points | Status   |
+| ---- | ------------------------------- | -------- | ------ | -------- |
+| 1    | Project Foundation & Deployment | 1.1--1.3 | 8      | Complete |
+| 2    | Site Configuration              | 2.1--2.3 | 7      | Complete |
+| 3    | Content Creation                | 3.1--3.4 | 10     | Complete |
+| 4    | Launch & Verification           | 4.1      | 3      | Complete |
+| 5    | White/Black Academic Theme      | 5.1--5.2 | 4      | Complete |
+| 6    | Standard Blog Features          | 6.1--6.3 | 8      | Complete |
+| 7    | Timeline & UI Refinements       | 7.1--7.2 | 5      | Complete |
 
-**Total:** 11 stories, 28 points
+**Total:** 16 stories, 45 points
+
+## ADR Index
+
+| #    | Title                                        | Status   |
+| ---- | -------------------------------------------- | -------- |
+| 0001 | Blog Design — White/Black Academic Theme     | Accepted |
+| 0002 | Standard Blog Features                       | Accepted |
+| 0003 | Timeline Components & UI Refinements         | Proposed |
+
+## Plan Index
+
+| Plan                                | Epic(s) | Status   |
+| ----------------------------------- | ------- | -------- |
+| 2026-02-21 Personal Blog            | 1--4    | Verified |
+| 2026-02-22 SCSS Color Overrides     | 5       | Verified |
+| 2026-02-22 Visual QA                | 5       | Verified |
+| 2026-02-22 Standard Blog Features   | 6       | Verified |
+| 2026-02-23 Timeline & UI Refinements| 7       | Verified |
+
+## Architecture
+
+See [spec/arch/blog-architecture.md](spec/arch/blog-architecture.md) for the full system architecture diagram covering the Hugo build pipeline, override strategy, content types, deployment, and interactive components.
 
 ## Story Workflow
 
-Stories follow a lifecycle from `rfp/` to `adr/`:
+Stories follow a spec-driven development lifecycle:
 
-1. Epic specifications live in `spec/` (e.g., `spec/epic-01-project-foundation.md`)
-2. Detailed acceptance criteria live in `rfp/X.Y-story-name.md`
-3. When implemented, the file moves to `adr/X.Y-story-name.md` with implementation notes
-4. Implementation plans live in `plans/` (e.g., `plans/2026-02-21-personal-blog.md`)
+1. Epic specifications live in `spec/epics/` (e.g., `epic-01-project-foundation.md`)
+2. Detailed acceptance criteria live in `spec/stories/X.Y-story-name.md`
+3. Implementation plans live in `spec/plans/` (dated by creation)
+4. Architecture decisions are recorded in `adr/` before implementation
