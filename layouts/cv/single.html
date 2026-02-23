@@ -15,7 +15,7 @@
     <article>
       <h2>Resume</h2>
       {{ with .Params.tagline }}
-      <p class="cv-tagline">{{ . }}</p>
+      <p class="cv-tagline">{{ . | safeHTML }}</p>
       {{ end }}
 
       {{/* Timeline visualization */}}

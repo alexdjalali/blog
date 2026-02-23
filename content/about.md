@@ -10,7 +10,7 @@ images:
 
 **Hi, I'm a.j.djalali**
 
-I was born in El Paso, Texas. My father worked for Marriott Hotels, which meant our family moved — a lot. Growing up, home was never one place. It was wherever we unpacked next:
+I was born in El Paso, Texas. My father worked for [Marriott Hotels](https://www.marriott.com/), which meant our family moved — a lot. Growing up, home was never one place. It was wherever we unpacked next:
 
 <div id="about-timeline"></div>
 
@@ -43,6 +43,10 @@ I ride a 2015 [Indian Scout](https://www.indianmotorcycle.com/) — there's noth
 I'm a workwear and Japanese denim enthusiast. [Iron Heart](https://www.ironheart.co.uk/), [Momotaro](https://momotarojeans.net/), [Sugar Cane](https://www.sugarcanejeans.com/), [The Flat Head](https://www.theflathead.com/), [Studio D'Artisan](https://www.dartisan.co.jp/), [Samurai Jeans](https://samurai-j.com/) on the Japanese denim side; [Levi's](https://www.levi.com/), [Lee](https://www.lee.com/), [Wrangler](https://www.wrangler.com/), and [Dickies](https://www.dickies.com/) for the American classics; [Filson](https://www.filson.com/), [Pendleton](https://www.pendleton-usa.com/), [Ginew](https://ginew.com/), [Schott NYC](https://www.schottnyc.com/), [Buzz Rickson's](https://www.buzzricksons.com/), [Red Wing](https://www.redwingshoes.com/), [Master Supply Co](https://mastersupplyco.com/), and [Vans](https://www.vans.com/) for heritage workwear and everyday staples. If it's built to last and gets better with age, I'm interested.
 
 I collect guitars — electrics and acoustics, old and new. And I'm an audiophile and vinyl collector, always hunting for the right pressing of the right record to play through the right setup.
+
+<div style="text-align: right; margin-bottom: 1.5em;">
+  <img src="/blog/images/signature.png" class="about-signature" alt="a.j.djalali signature">
+</div>
 
 <div class="about-hero">
   <img src="/blog/images/motorcyle.jpeg" class="about-hero-img" alt="a.j.djalali on a motorcycle">

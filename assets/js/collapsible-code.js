@@ -57,6 +57,7 @@
     copyBtn.className = "code-copy-btn";
     copyBtn.textContent = "Copy";
     copyBtn.setAttribute("aria-label", "Copy code to clipboard");
+    copyBtn.setAttribute("aria-live", "polite");
 
     header.appendChild(toggle);
     header.appendChild(copyBtn);

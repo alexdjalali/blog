@@ -4,7 +4,7 @@ date: 2026-02-21
 draft: false
 type: "cv"
 subtitle: "Research Faculty — Georgia Institute of Technology"
-tagline: "Research faculty at Georgia Tech and former CTO & co-founder of PerceptivePanda, an AI-powered enterprise feedback platform acquired by Zapier. Stanford PhD in Linguistics with a dissertation on the formal semantics of comparative constructions. Created the natural language technology behind Tableau's Ask Data and holds 9 patents in natural language interfaces for data visualization. Previously led cross-cloud analytics integration and AI strategy at Salesforce, and built the core NLP pipeline at ClearGraph (acquired by Tableau). Northwestern BA, Fulbright Scholar at the University of Amsterdam, with deep expertise in NLP, AI, and software engineering at scale."
+tagline: 'Research faculty at <a href="https://www.gatech.edu/" target="_blank" rel="noopener noreferrer">Georgia Tech</a> and former CTO &amp; co-founder of <a href="https://www.perceptivepanda.com/" target="_blank" rel="noopener noreferrer">PerceptivePanda</a>, an AI-powered enterprise feedback platform acquired by <a href="https://zapier.com/" target="_blank" rel="noopener noreferrer">Zapier</a>. <a href="https://www.stanford.edu/" target="_blank" rel="noopener noreferrer">Stanford</a> PhD in Linguistics with a <a href="https://stacks.stanford.edu/file/druid:zd767rn6093/djalali_diss_final-augmented.pdf" target="_blank" rel="noopener noreferrer">dissertation</a> on the formal semantics of comparative constructions. Created the natural language technology behind <a href="https://www.tableau.com/products/add-ons/natural-language" target="_blank" rel="noopener noreferrer">Tableau&apos;s Ask Data</a> and holds 9 patents in natural language interfaces for data visualization. Previously led cross-cloud analytics integration and AI strategy at <a href="https://www.salesforce.com/" target="_blank" rel="noopener noreferrer">Salesforce</a>, and built the core NLP pipeline at <a href="https://www.crunchbase.com/organization/cleargraph" target="_blank" rel="noopener noreferrer">ClearGraph</a> (acquired by <a href="https://www.tableau.com/" target="_blank" rel="noopener noreferrer">Tableau</a>). <a href="https://www.northwestern.edu/" target="_blank" rel="noopener noreferrer">Northwestern</a> BA, <a href="https://fulbrightscholars.org/" target="_blank" rel="noopener noreferrer">Fulbright Scholar</a> at the <a href="https://www.uva.nl/en" target="_blank" rel="noopener noreferrer">University of Amsterdam</a>, with deep expertise in NLP, AI, and software engineering at scale.'
 description: "Resume of AJ Djalali — Research Faculty at Georgia Tech, Stanford PhD, 9 patents in NLP for data visualization, former CTO at PerceptivePanda (acquired by Zapier)."
 images:
   - "images/og-default.png"
@@ -61,60 +61,60 @@ images:
 
 <h3>Languages</h3>
 <div class="tech-grid">
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Python.svg" alt="Python"><span>Python</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Go.svg" alt="Go"><span>Go</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/TypeScript.svg" alt="TypeScript"><span>TypeScript</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/JavaScript.svg" alt="JavaScript"><span>JavaScript</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Bash.svg" alt="Bash"><span>Bash</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Lua.svg" alt="Lua"><span>Lua</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/HTML5.svg" alt="HTML"><span>HTML</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/CSS3.svg" alt="CSS"><span>CSS</span></div>
+  <a class="tech-icon" href="https://www.python.org/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Python.svg" alt="Python"><span>Python</span></a>
+  <a class="tech-icon" href="https://go.dev/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Go.svg" alt="Go"><span>Go</span></a>
+  <a class="tech-icon" href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/TypeScript.svg" alt="TypeScript"><span>TypeScript</span></a>
+  <a class="tech-icon" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/JavaScript.svg" alt="JavaScript"><span>JavaScript</span></a>
+  <a class="tech-icon" href="https://www.gnu.org/software/bash/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Bash.svg" alt="Bash"><span>Bash</span></a>
+  <a class="tech-icon" href="https://www.lua.org/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Lua.svg" alt="Lua"><span>Lua</span></a>
+  <a class="tech-icon" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/HTML5.svg" alt="HTML"><span>HTML</span></a>
+  <a class="tech-icon" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/CSS3.svg" alt="CSS"><span>CSS</span></a>
 </div>
 
 <h3>Frameworks</h3>
 <div class="tech-grid">
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/React.svg" alt="React"><span>React</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Next.js.svg" alt="Next.js"><span>Next.js</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/FastAPI.svg" alt="FastAPI"><span>FastAPI</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg" alt="Tailwind CSS"><span>Tailwind</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Hugo.svg" alt="Hugo"><span>Hugo</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/GraphQL.svg" alt="GraphQL"><span>GraphQL</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Node.js.svg" alt="Node.js"><span>Node.js</span></div>
+  <a class="tech-icon" href="https://react.dev/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/React.svg" alt="React"><span>React</span></a>
+  <a class="tech-icon" href="https://nextjs.org/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Next.js.svg" alt="Next.js"><span>Next.js</span></a>
+  <a class="tech-icon" href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/FastAPI.svg" alt="FastAPI"><span>FastAPI</span></a>
+  <a class="tech-icon" href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg" alt="Tailwind CSS"><span>Tailwind</span></a>
+  <a class="tech-icon" href="https://gohugo.io/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Hugo.svg" alt="Hugo"><span>Hugo</span></a>
+  <a class="tech-icon" href="https://graphql.org/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/GraphQL.svg" alt="GraphQL"><span>GraphQL</span></a>
+  <a class="tech-icon" href="https://nodejs.org/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Node.js.svg" alt="Node.js"><span>Node.js</span></a>
 </div>
 
 <h3>Data</h3>
 <div class="tech-grid">
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/PostgresSQL.svg" alt="PostgreSQL"><span>PostgreSQL</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/MongoDB.svg" alt="MongoDB"><span>MongoDB</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Redis.svg" alt="Redis"><span>Redis</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Elastic-Search.svg" alt="Elasticsearch"><span>Elasticsearch</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/New4j.svg" alt="Neo4j"><span>Neo4j</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Apache-Kafka.svg" alt="Kafka"><span>Kafka</span></div>
+  <a class="tech-icon" href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/PostgresSQL.svg" alt="PostgreSQL"><span>PostgreSQL</span></a>
+  <a class="tech-icon" href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/MongoDB.svg" alt="MongoDB"><span>MongoDB</span></a>
+  <a class="tech-icon" href="https://redis.io/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Redis.svg" alt="Redis"><span>Redis</span></a>
+  <a class="tech-icon" href="https://www.elastic.co/elasticsearch" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Elastic-Search.svg" alt="Elasticsearch"><span>Elasticsearch</span></a>
+  <a class="tech-icon" href="https://neo4j.com/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/New4j.svg" alt="Neo4j"><span>Neo4j</span></a>
+  <a class="tech-icon" href="https://kafka.apache.org/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Apache-Kafka.svg" alt="Kafka"><span>Kafka</span></a>
 </div>
 
 <h3>Infrastructure</h3>
 <div class="tech-grid">
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Docker.svg" alt="Docker"><span>Docker</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Kubernetes.svg" alt="Kubernetes"><span>Kubernetes</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Helm.svg" alt="Helm"><span>Helm</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/HashiCorp-Terraform.svg" alt="Terraform"><span>Terraform</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/AWS.svg" alt="AWS"><span>AWS</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/NGINX.svg" alt="Nginx"><span>Nginx</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/GitHub-Actions.svg" alt="GitHub Actions"><span>Actions</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Linux.svg" alt="Linux"><span>Linux</span></div>
+  <a class="tech-icon" href="https://www.docker.com/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Docker.svg" alt="Docker"><span>Docker</span></a>
+  <a class="tech-icon" href="https://kubernetes.io/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Kubernetes.svg" alt="Kubernetes"><span>Kubernetes</span></a>
+  <a class="tech-icon" href="https://helm.sh/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Helm.svg" alt="Helm"><span>Helm</span></a>
+  <a class="tech-icon" href="https://www.terraform.io/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/HashiCorp-Terraform.svg" alt="Terraform"><span>Terraform</span></a>
+  <a class="tech-icon" href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/AWS.svg" alt="AWS"><span>AWS</span></a>
+  <a class="tech-icon" href="https://nginx.org/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/NGINX.svg" alt="Nginx"><span>Nginx</span></a>
+  <a class="tech-icon" href="https://github.com/features/actions" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/GitHub-Actions.svg" alt="GitHub Actions"><span>Actions</span></a>
+  <a class="tech-icon" href="https://www.kernel.org/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Linux.svg" alt="Linux"><span>Linux</span></a>
 </div>
 
 <h3>Observability</h3>
 <div class="tech-grid">
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Prometheus.svg" alt="Prometheus"><span>Prometheus</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Grafana.svg" alt="Grafana"><span>Grafana</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/OpenTelemetry.svg" alt="OpenTelemetry"><span>OpenTelemetry</span></div>
+  <a class="tech-icon" href="https://prometheus.io/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Prometheus.svg" alt="Prometheus"><span>Prometheus</span></a>
+  <a class="tech-icon" href="https://grafana.com/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Grafana.svg" alt="Grafana"><span>Grafana</span></a>
+  <a class="tech-icon" href="https://opentelemetry.io/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/OpenTelemetry.svg" alt="OpenTelemetry"><span>OpenTelemetry</span></a>
 </div>
 
 <h3>Tools</h3>
 <div class="tech-grid">
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Git.svg" alt="Git"><span>Git</span></div>
-  <div class="tech-icon"><img src="https://icon.icepanel.io/Technology/svg/Vim.svg" alt="Neovim"><span>Neovim</span></div>
+  <a class="tech-icon" href="https://git-scm.com/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Git.svg" alt="Git"><span>Git</span></a>
+  <a class="tech-icon" href="https://neovim.io/" target="_blank" rel="noopener noreferrer"><img src="https://icon.icepanel.io/Technology/svg/Vim.svg" alt="Neovim"><span>Neovim</span></a>
 </div>
 
 </div>

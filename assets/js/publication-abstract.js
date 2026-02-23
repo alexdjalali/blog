@@ -25,18 +25,25 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add collapsed class to hide the abstract by default
     abstractSpan.classList.add("collapsed");
 
-    // Create the toggle button
-    var toggle = document.createElement("a");
+    // Give the abstract an id for aria-controls
+    if (!abstractSpan.id) {
+      abstractSpan.id = "abstract-" + Math.random().toString(36).substr(2, 9);
+    }
+
+    // Create the toggle button (semantic <button>, not <a>)
+    var toggle = document.createElement("button");
+    toggle.type = "button";
     toggle.className = "abstract-toggle";
-    toggle.href = "#";
     toggle.textContent = "Abstract";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-controls", abstractSpan.id);
 
     // Attach click handler
-    toggle.addEventListener("click", function (event) {
-      event.preventDefault();
+    toggle.addEventListener("click", function () {
       var isCollapsed = abstractSpan.classList.contains("collapsed");
       abstractSpan.classList.toggle("collapsed");
       this.textContent = isCollapsed ? "Hide abstract" : "Abstract";
+      this.setAttribute("aria-expanded", String(isCollapsed));
     });
 
     // Insert the toggle button before the bib-link (so Abstract appears first),

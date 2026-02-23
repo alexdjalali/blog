@@ -287,17 +287,18 @@
       .attr("class", "description collapsed")
       .html(function (d) { return d.description; });
 
-    entries.append("a")
+    entries.append("button")
       .attr("class", "learn-more")
-      .attr("href", "#")
+      .attr("type", "button")
+      .attr("aria-expanded", "false")
       .text("Learn more")
-      .on("click", function (event) {
-        event.preventDefault();
+      .on("click", function () {
         var entry = this.parentNode;
         var desc = entry.querySelector(".description");
         var isCollapsed = desc.classList.contains("collapsed");
         desc.classList.toggle("collapsed");
         this.textContent = isCollapsed ? "Show less" : "Learn more";
+        this.setAttribute("aria-expanded", String(isCollapsed));
       });
   }
 
