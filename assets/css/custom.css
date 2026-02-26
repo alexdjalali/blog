@@ -1020,7 +1020,11 @@ body.colorscheme-dark .read-more-btn:hover {
   font-size: 0.88em;
   color: var(--text-body);
   line-height: 1.6;
-  margin: 0;
+  margin: 0 0 1em 0;
+}
+
+.author-bio-text p:last-child {
+  margin-bottom: 0;
 }
 
 @media (max-width: 480px) {
