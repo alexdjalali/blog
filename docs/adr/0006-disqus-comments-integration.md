@@ -1,4 +1,4 @@
-# ADR-0006: Disqus Comments Integration
+# ADR-0006: Giscus Comments Integration
 
 **Date**: 2026-02-25
 **Status**: Accepted
@@ -6,66 +6,69 @@
 
 ## Context
 
-The blog has no commenting system enabled. Reader engagement is limited to social sharing buttons (Twitter/X, LinkedIn, copy link). The Hugo Coder theme already ships with a complete Disqus partial (`themes/coder/layouts/_partials/posts/disqus.html`) that is gated behind a config value, and the post template (`layouts/posts/single.html:69`) already calls it. Enabling Disqus requires only a configuration change.
+The blog has no commenting system enabled. Reader engagement is limited to social sharing buttons (Twitter/X, LinkedIn, copy link). The Hugo Coder theme ships with partials for multiple comment systems (Disqus, Giscus, Utterances, Commento, Cusdis), all gated behind config values. The post template (`layouts/posts/single.html:72`) already calls the Giscus partial.
 
-Disqus's Basic (free) plan requires displaying ads, but personal non-commercial blogs qualify for an ad-free exception.
+Disqus was initially evaluated but its free tier requires displaying ads (unless granted an exception), and the Trusted Domains configuration caused loading failures on GitHub Pages. Giscus is a better fit: free, ad-free, open source, and uses GitHub Discussions as the backend — aligning naturally with a GitHub Pages-hosted blog.
 
 ## Decision
 
-Enable Disqus comments by setting `services.disqus.shortname` in `hugo.toml`. Use the existing theme partial as-is — it already handles:
+Enable Giscus comments by adding `[params.giscus]` configuration to `hugo.toml`. Use the existing theme partial (`themes/coder/layouts/_partials/posts/giscus.html`) as-is — it handles:
 
-- Async embed script loading
-- Localhost detection (placeholder message in dev)
-- Per-page identifier/title/URL via frontmatter
-- Dark/light theme switching via `themeChanged` event + `DISQUS.reset`
+- Async script loading from `giscus.app/client.js`
+- Dark/light theme detection via `localStorage` colorscheme
+- Configurable mapping (pathname), reactions, input position, and language
 - Per-post opt-out via `disableComments: true` frontmatter
+- Lazy loading
 
-No custom partial override or additional JavaScript is needed.
+Comments are stored as GitHub Discussions in the `alexdjalali/blog` repo under the Announcements category.
 
 ## Alternatives Considered
 
 | Alternative | Pros | Cons |
 |-------------|------|------|
-| **Disqus (chosen)** | Zero custom code — theme has full support; mature moderation tools; spam filtering; social login | Third-party dependency; ads on free plan (waivable for personal blogs); loads external JS |
-| **Giscus** (GitHub Discussions) | No ads; open source; theme partial exists | Requires GitHub account to comment; limits audience to technical users |
-| **Utterances** (GitHub Issues) | Lightweight; no ads; theme partial exists | Same GitHub-only limitation; clutters repo issues |
-| **Cusdis** | Lightweight; privacy-focused; self-hostable | Requires self-hosting or paid plan; less mature |
-| **No comments** | No external dependencies; no privacy concerns | No reader engagement mechanism |
+| **Giscus (chosen)** | Free; no ads; open source; theme partial exists; data lives in GitHub repo; reactions support | Requires GitHub account to comment |
+| **Disqus** | Mature moderation; spam filtering; social login | Ads on free plan; Trusted Domains issues on GitHub Pages; data on third-party servers |
+| **Utterances** (GitHub Issues) | Lightweight; no ads; theme partial exists | Clutters repo issues; no reactions |
+| **Cusdis** | Privacy-focused; lightweight (~5 KB) | Requires self-hosting or paid plan |
+| **No comments** | No external dependencies | No reader engagement |
 
 ## Architecture Diagram
 
 ```mermaid
 graph TD
-    A["layouts/posts/single.html"] -->|"calls partial"| B["posts/disqus.html<br/>(theme partial)"]
-    B -->|"checks"| C["hugo.toml<br/>services.disqus.shortname"]
-    C -->|"shortname set"| D["Renders #disqus_thread div<br/>+ embed.js script"]
-    C -->|"shortname empty"| E["Renders nothing"]
-    D -->|"loads async"| F["disqus.com/embed.js"]
-    F -->|"renders"| G["Comment thread<br/>in post footer"]
+    A["layouts/posts/single.html"] -->|"calls partial"| B["posts/giscus.html<br/>(theme partial)"]
+    B -->|"checks"| C["hugo.toml<br/>params.giscus.repo"]
+    C -->|"repo set"| D["Renders div.comments<br/>+ giscus client.js"]
+    C -->|"repo empty"| E["Renders nothing"]
+    D -->|"loads async"| F["giscus.app/client.js"]
+    F -->|"reads/writes"| G["GitHub Discussions<br/>alexdjalali/blog"]
+    G -->|"renders"| H["Comment thread<br/>in post footer"]
 
     style C fill:#f9f,stroke:#333
-    style F fill:#bbf,stroke:#333
+    style G fill:#bfb,stroke:#333
 ```
 
 ## Consequences
 
 ### Positive
 - Reader engagement via comments on all posts
-- Zero custom code — leverages existing theme infrastructure
-- Moderation dashboard, spam filtering, and social login out of the box
-- Per-post opt-out available via frontmatter
+- Zero custom code — leverages existing theme partial
+- Comments stored as GitHub Discussions — portable, searchable, version-controlled
+- No ads, no tracking, no third-party data storage
+- Reactions (emoji) support out of the box
+- Theme-aware (auto light/dark mode)
 
 ### Negative
-- External JavaScript dependency (Disqus embed.js loaded from CDN)
-- Comments data lives on Disqus servers, not in the repo
-- If CSP is enabled in the future, Disqus domains must be whitelisted
+- Commenters must have a GitHub account (acceptable for a technical/academic blog)
+- External JavaScript dependency (giscus.app client.js)
 
 ### Risks
-- Disqus could change free-tier terms (mitigation: theme also supports Giscus, Utterances, Commento, Cusdis — switching is a config change)
+- Giscus.app service could go down (mitigation: self-hostable; also can switch to Utterances or Disqus via config change)
 
 ## Implementation Notes
 
-- **Change**: Add `[services.disqus] shortname = "alexdjalali"` to `hugo.toml`
-- **Files affected**: `hugo.toml` only (1 line)
-- **Testing**: Run `hugo server`, navigate to any post, verify comment thread loads; verify localhost placeholder message appears in dev
-- **Rollback**: Remove or comment out the `[services.disqus]` section — partial renders nothing when shortname is empty
+- **Change**: Add `[params.giscus]` section to `hugo.toml` with repo, repoID, category, categoryID
+- **Prerequisite**: GitHub Discussions enabled on `alexdjalali/blog` repo
+- **Files affected**: `hugo.toml` only
+- **Testing**: Run `hugo server` — Giscus won't load on localhost (CORS), verify in production after deploy
+- **Rollback**: Remove the `[params.giscus]` section — partial renders nothing when repo is empty

@@ -10,9 +10,6 @@ enableGitInfo = true
 [services.googleAnalytics]
   id = "G-R50JVPX7MP"
 
-[services.disqus]
-  shortname = "alexdjalali"
-
 [markup.tableOfContents]
   startLevel = 2
   endLevel = 3
@@ -60,6 +57,20 @@ favicon_32 = "images/favicon-32x32.png"
 favicon_16 = "images/favicon-16x16.png"
 touchicon = "images/apple-touch-icon.png"
 license = '<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
+
+[params.giscus]
+repo = "alexdjalali/blog"
+repoID = "R_kgDORVsOCg"
+category = "Announcements"
+categoryID = "DIC_kwDORVsOCs4C3OgY"
+mapping = "pathname"
+strict = "1"
+reactionsEnabled = "1"
+emitMetadata = "0"
+inputPosition = "top"
+theme = "preferred_color_scheme"
+lang = "en"
+loading = "lazy"
 
 [languages.en]
 languageName = "English"
