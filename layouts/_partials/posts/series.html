@@ -1,0 +1,46 @@
+{{ $seriesTerms := .GetTerms "series" }}
+{{ range $seriesTerms }}
+  {{ $pages := .Pages.ByDate }}
+  {{ if gt (len $pages) 1 }}
+    {{ $currentIndex := 0 }}
+    {{ range $i, $p := $pages }}
+      {{ if eq $p.RelPermalink $.RelPermalink }}
+        {{ $currentIndex = $i }}
+      {{ end }}
+    {{ end }}
+    {{ $partNum := add $currentIndex 1 }}
+    {{ $total := len $pages }}
+    <nav class="series-nav" aria-label="Post series navigation">
+      <div class="series-nav-header">
+        <span class="series-nav-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
+        <span class="series-nav-title">{{ .LinkTitle }}</span>
+        <span class="series-nav-badge">Part {{ $partNum }} of {{ $total }}</span>
+      </div>
+      <ol class="series-nav-list">
+        {{ range $i, $p := $pages }}
+        <li class="series-nav-item{{ if eq $p.RelPermalink $.RelPermalink }} series-nav-current{{ end }}">
+          {{ if eq $p.RelPermalink $.RelPermalink }}
+            <strong>{{ $p.Title }}</strong>
+          {{ else }}
+            <a href="{{ $p.Permalink }}">{{ $p.Title }}</a>
+          {{ end }}
+        </li>
+        {{ end }}
+      </ol>
+      <div class="series-nav-links">
+        {{ if gt $currentIndex 0 }}
+          {{ $prev := index $pages (sub $currentIndex 1) }}
+          <a class="series-nav-prev" href="{{ $prev.Permalink }}">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Previous
+          </a>
+        {{ end }}
+        {{ if lt $partNum $total }}
+          {{ $next := index $pages (add $currentIndex 1) }}
+          <a class="series-nav-next" href="{{ $next.Permalink }}">
+            Next <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        {{ end }}
+      </div>
+    </nav>
+  {{ end }}
+{{ end }}
