@@ -10,6 +10,9 @@ enableGitInfo = true
 [services.googleAnalytics]
   id = "G-R50JVPX7MP"
 
+[services.disqus]
+  shortname = "alexdjalali"
+
 [markup.tableOfContents]
   startLevel = 2
   endLevel = 3
