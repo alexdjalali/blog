@@ -4,7 +4,8 @@ date: 2026-02-24
 draft: false
 description: "How strict layer boundaries prevent architectural decay — a deep-dive into interface-first, layered monorepo design with Go and Python examples."
 images:
-  - "images/og-default.png"
+  - "images/posts/the-ideal-repository-structure.jpg"
+featuredImage: "images/posts/the-ideal-repository-structure.jpg"
 tags: ["architecture", "monorepo", "design-patterns", "go", "python"]
 keywords: ["repository structure", "layered architecture", "clean architecture", "monorepo", "dependency injection", "interfaces", "go", "python"]
 series: ["Software Architecture"]

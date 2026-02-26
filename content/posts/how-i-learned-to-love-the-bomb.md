@@ -4,7 +4,8 @@ date: 2026-02-22
 draft: false
 description: "A developer's journey from AI skepticism to building an entire engineering system around it. Adapt or die — and what adaptation actually looks like."
 images:
-  - "images/og-default.png"
+  - "images/posts/how-i-learned-to-love-the-bomb.jpg"
+featuredImage: "images/posts/how-i-learned-to-love-the-bomb.jpg"
 tags: ["ai", "software-engineering", "developer-tools", "claude", "cursor"]
 keywords: ["ai tools", "software engineering", "developer productivity", "claude ai", "cursor editor"]
 ---

@@ -4,7 +4,8 @@ date: 2026-02-26
 draft: false
 description: "Seventeen slash commands, seven templates, and three model tiers — how a set of short, composable skills turns Claude Code into a full software development lifecycle."
 images:
-  - "images/og-default.png"
+  - "images/posts/anatomy-of-an-ai-engineering-system.jpg"
+featuredImage: "images/posts/anatomy-of-an-ai-engineering-system.jpg"
 tags: ["ai", "software-engineering", "developer-tools", "claude", "architecture"]
 keywords: ["claude code", "ai skills", "software development lifecycle", "prompt engineering", "slash commands", "ai-assisted development"]
 series: ["Software Architecture"]
