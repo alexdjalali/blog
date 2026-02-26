@@ -1,0 +1,51 @@
+{{ define "title" }}
+  404 · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+  <section class="container page error-page">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">404</h1>
+        </div>
+        <p class="error-subtitle">Page not found</p>
+      </header>
+
+      <div class="search-container">
+        <p class="error-hint">Try searching for what you were looking for:</p>
+        <div class="search-input-wrap">
+          <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+          <input type="search" class="search-input" id="search-input"
+            placeholder="Search posts..." aria-label="Search posts"
+            data-index="{{ "index.json" | relURL }}">
+        </div>
+        <ul class="search-results" id="search-results"></ul>
+      </div>
+
+      {{ $recent := first 3 (where .Site.RegularPages "Section" "posts") }}
+      {{ with $recent }}
+      <section class="related-posts">
+        <h3><i class="fa-solid fa-newspaper" aria-hidden="true"></i> Recent Posts</h3>
+        <div class="related-posts-grid">
+          {{ range . }}
+          <a class="related-post-card" href="{{ .Permalink }}">
+            <div class="related-post-title">{{ .Title }}</div>
+            <div class="related-post-date">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date | time.Format "January 2, 2006" }}
+              </time>
+            </div>
+          </a>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+      <div class="error-home">
+        <a href="{{ .Site.BaseURL }}" class="read-more-btn">
+          <i class="fa-solid fa-house" aria-hidden="true"></i> Back to Home
+        </a>
+      </div>
+    </article>
+  </section>
+{{ end }}

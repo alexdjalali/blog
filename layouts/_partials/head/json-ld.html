@@ -1,4 +1,4 @@
-{{- $author := dict "@type" "Person" "name" "AJ Djalali" "url" .Site.BaseURL "jobTitle" "Research Faculty" "affiliation" (dict "@type" "Organization" "name" "Georgia Institute of Technology") "sameAs" (slice "https://github.com/alexdjalali/" "https://www.linkedin.com/in/alex-djalali-272502273/") -}}
+{{- $author := dict "@type" "Person" "name" "AJ Djalali" "url" .Site.BaseURL "jobTitle" "Research Faculty" "description" "Research faculty and senior research engineer at Georgia Tech. PhD in Linguistics from Stanford, specializing in computational semantics, NLP, and software architecture." "affiliation" (dict "@type" "Organization" "name" "Georgia Institute of Technology" "url" "https://www.gatech.edu/") "alumniOf" (slice (dict "@type" "CollegeOrUniversity" "name" "Stanford University" "department" "Linguistics") (dict "@type" "CollegeOrUniversity" "name" "Northwestern University") (dict "@type" "CollegeOrUniversity" "name" "University of Amsterdam")) "sameAs" (slice "https://github.com/alexdjalali/" "https://www.linkedin.com/in/alex-djalali-272502273/" "https://scholar.google.com/citations?user=nNk4g6oAAAAJ&hl=en") -}}
 
 {{- if .IsHome -}}
 {{/* Homepage: WebSite schema */}}
@@ -30,6 +30,18 @@
   "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
   "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
   "author": {{ $author | jsonify | safeJS }},
+  "publisher": {{ $author | jsonify | safeJS }},
+  "wordCount": {{ .WordCount }},
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "{{ .Site.Title }}",
+    "url": "{{ .Site.BaseURL }}"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".post-title h1", ".post-content > p:first-of-type"]
+  },
   {{- with .Params.images }}
   "image": "{{ index . 0 | absURL }}",
   {{- end }}

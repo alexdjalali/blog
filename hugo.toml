@@ -33,6 +33,7 @@ inline = [["$", "$"], ["\\(", "\\)"]]
 
 [taxonomies]
   tag = "tags"
+  series = "series"
 
 [sitemap]
   changeFreq = "monthly"

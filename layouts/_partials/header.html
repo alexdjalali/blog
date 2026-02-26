@@ -2,7 +2,7 @@
   <section class="container">
     {{ with .Site }}
     <a class="navigation-title" href="{{ absLangURL "" }}">
-      <img class="nav-signature" src="{{ "images/signature.png" | relURL }}" alt="{{ .Title }}">
+      <img class="nav-signature" src="{{ "images/signature.png" | relURL }}" alt="{{ .Title }}" width="600" height="288" fetchpriority="high">
     </a>
     {{ end }}
     {{ if or .Site.Menus.main hugo.IsMultilingual }}

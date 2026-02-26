@@ -7,6 +7,7 @@ images:
   - "images/og-default.png"
 tags: ["architecture", "design-patterns", "observability", "resilience"]
 keywords: ["decorator pattern", "observability", "resilience", "design patterns", "python", "go"]
+series: ["Software Architecture"]
 ---
 
 Production services require logging, metrics collection, retry logic, and circuit breaking. The central question is where these cross-cutting concerns should reside. The naive approach — scattering observability and resilience logic directly inside business methods — produces implementations that are predominantly infrastructure boilerplate, with the actual domain logic obscured. Modifications to retry policies or metrics backends require changes across every service in the codebase, violating the single-responsibility principle and making the system brittle to operational change.

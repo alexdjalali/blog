@@ -7,6 +7,7 @@ images:
   - "images/og-default.png"
 tags: ["architecture", "monorepo", "design-patterns", "go", "python"]
 keywords: ["repository structure", "layered architecture", "clean architecture", "monorepo", "dependency injection", "interfaces", "go", "python"]
+series: ["Software Architecture"]
 ---
 
 Most repositories start with good intentions. The first hundred commits are organized, components are small and focused, and dependency flow is obvious. By commit five thousand, the codebase resembles a tangled graph — services depend on repositories that depend back on services, infrastructure concerns leak into business logic, circular imports require elaborate workarounds, and every change carries the risk of breaking something distant and unrelated. The structure has rotted because there was no mechanism to enforce boundaries.
