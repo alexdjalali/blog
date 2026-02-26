@@ -27,7 +27,11 @@
       {{ now.Year }}
       {{ with .Site.Params.author }} {{ . }} {{ end }}
       · <a href="{{ "ai-disclaimer/" | relURL }}">AI Disclaimer</a>
+      · <a href="{{ "archives/" | relURL }}">Archive</a>
       · <a href="https://calendly.com/alex-djalali/30min" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Book a Call</a>
     </div>
   </section>
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
 </footer>

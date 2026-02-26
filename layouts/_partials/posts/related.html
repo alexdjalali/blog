@@ -1,5 +1,14 @@
-{{ $related := .Site.RegularPages.Related . | first 3 }}
-{{ with $related }}
+{{ $related := .Site.RegularPages.Related . }}
+{{ $prev := .PrevInSection }}
+{{ $next := .NextInSection }}
+{{ $filtered := slice }}
+{{ range $related }}
+  {{ if and (ne . $prev) (ne . $next) }}
+    {{ $filtered = $filtered | append . }}
+  {{ end }}
+{{ end }}
+{{ $filtered = $filtered | first 3 }}
+{{ with $filtered }}
 <section class="related-posts">
   <h3><i class="fa-solid fa-newspaper" aria-hidden="true"></i> Related Posts</h3>
   <div class="related-posts-grid">

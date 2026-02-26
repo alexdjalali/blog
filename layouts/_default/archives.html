@@ -1,0 +1,26 @@
+{{ define "title" }}
+  Archive · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+  <section class="container">
+    <header>
+      <h1 class="title">Archive</h1>
+      <p class="archive-count">{{ len (where .Site.RegularPages "Section" "posts") }} posts</p>
+    </header>
+    {{ $pages := where .Site.RegularPages "Section" "posts" }}
+    {{ range $pages.GroupByDate "2006" }}
+    <div class="archive-year">
+      <h2>{{ .Key }}</h2>
+      <ul class="archive-list">
+        {{ range .Pages }}
+        <li class="archive-item">
+          <span class="archive-date">{{ .Date | time.Format "Jan 2" }}</span>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ with .ReadingTime }}<span class="archive-reading-time">{{ . }} min</span>{{ end }}
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+  </section>
+{{ end }}
