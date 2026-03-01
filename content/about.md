@@ -28,11 +28,25 @@ That next chapter was a PhD at [Stanford University](https://www.stanford.edu/),
 
 Toward the end of grad school I interned at [Nuance Communications](https://www.nuance.com/), which gave me my first taste of building language technology at scale. That led to [ClearGraph](https://www.crunchbase.com/organization/cleargraph), where I helped build natural language interfaces for data — work that caught [Tableau](https://www.tableau.com/)'s attention. They acquired ClearGraph, and I spent the next few years creating the NL technology behind [Ask Data](https://www.tableau.com/products/add-ons/natural-language). When Tableau was acquired by [Salesforce](https://www.salesforce.com/), I stayed on as a Software Engineering Architect and Principal Member of Technical Staff.
 
+During grad school I also founded a private tutoring practice in the Bay Area, working with high school students on everything from English and Spanish to Calculus, AP Programming, AP Biology, and SAT/ACT prep. Every one of my students scored above 30 on the ACT and was accepted into the college of their choice.
+
+I later served as Head of Content & Growth at [Style at a Certain Age](https://www.styleatacertainage.com/), a nationally recognized fashion and lifestyle brand, where I led editorial strategy, doubled site traffic, and drove substantial revenue growth.
+
 In 2023 I co-founded [PerceptivePanda](https://www.perceptivepanda.com/), an AI startup that was accepted into [StartX](https://startx.com/) '24. PerceptivePanda was [acquired by Zapier](https://zapier.com/) in 2025.
 
 Today I'm **Research Faculty and Senior Research Engineer** at the [Georgia Institute of Technology](https://www.gatech.edu/), where I get to combine everything — linguistics, AI, and software engineering — under one roof.
 
 For the full professional rundown, see my [Resume](/cv/). My academic work is collected on the [Publications](/publications/) page.
+
+### Family
+
+My wife, Kelly, is a former member of [Deerhoof](https://en.wikipedia.org/wiki/Deerhoof) and co-founder of [7 Year Rabbit Cycle](https://www.last.fm/music/7+Year+Rabbit+Cycle). She now works alongside my mother at [Style at a Certain Age](https://www.styleatacertainage.com/).
+
+My mother, Beth, founded [Style at a Certain Age](https://www.styleatacertainage.com/) — a nationally recognized fashion and lifestyle brand inspiring women to age with grace, strength, and beauty.
+
+My father was a hotelier and one of the youngest general managers at [Marriott Hotels](https://www.marriott.com/).
+
+I also became an uncle twice over this year.
 
 ### Outside the Terminal
 

@@ -33,6 +33,17 @@
     "description": "<ul><li>Dissertation: &ldquo;<a href=\"https://stacks.stanford.edu/file/druid:zd767rn6093/djalali_diss_final-augmented.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">The syntax and semantics of ordinary comparative constructions in English</a>&rdquo;</li><li>Published 5 peer-reviewed papers, including work with <a href=\"https://web.stanford.edu/~cgpotts/\" target=\"_blank\" rel=\"noopener noreferrer\">Christopher Potts</a> on natural logic</li><li><a href=\"https://www.pbk.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Phi Beta Kappa</a> Fellowship (2014)</li><li>Focus on formal semantics, mathematical linguistics, syntax, and phonology</li></ul>"
   },
   {
+    "startdate": "2012-01-01",
+    "enddate": "2014-06-01",
+    "title": "Founder — Djalali Tutoring",
+    "shorttitle": "Tutoring",
+    "type": "job",
+    "logo": "images/logos/tutoring.png",
+    "url": "",
+    "summary": "Founded and ran a private tutoring practice for high school students in the San Francisco Bay Area. Taught English, Spanish, Math, AP Programming, AP Biology, and SAT/ACT Prep. All students achieved 30+ on the ACT and were accepted into the colleges of their choice.",
+    "description": "<ul><li>Founded and operated a private tutoring practice for high school students in the Bay Area</li><li>Taught English, Spanish, Math (Algebra, Algebra 2, Geometry, Trigonometry, Calculus), AP Programming, AP Biology, and SAT/ACT Prep</li><li>All students achieved &gt;30 on the ACT and were accepted into the colleges of their choice</li></ul>"
+  },
+  {
     "startdate": "2014-06-01",
     "enddate": "2014-09-01",
     "title": "Intern — Nuance Communications",
@@ -64,6 +75,17 @@
     "url": "https://www.tableau.com/",
     "summary": "Created the natural language technology behind Tableau's Ask Data feature, enabling users to query data visualizations in plain English. Scaled Natural Language Processing infrastructure with ElasticSearch-based semantic indexing. Published peer-reviewed research and was awarded 9 patents in natural language interfaces for data visualization.",
     "description": "<ul><li>Created the natural language technology behind Tableau&rsquo;s Ask Data feature</li><li>Scaled Natural Language Processing infrastructure including ElasticSearch-based semantic indexing</li><li>Published &ldquo;<a href=\"https://dl.acm.org/doi/10.1145/3301275.3302270\" target=\"_blank\" rel=\"noopener noreferrer\">Inferencing underspecified natural language utterances in visual analysis</a>&rdquo; (IUI 2019)</li><li>9 <a href=\"/publications/#patents\">patents</a> in natural language interfaces for data visualization</li></ul>"
+  },
+  {
+    "startdate": "2019-09-01",
+    "enddate": "2023-05-01",
+    "title": "Head of Content & Growth — Style at a Certain Age",
+    "shorttitle": "SAACA",
+    "type": "job",
+    "logo": "images/logos/saaca.png",
+    "url": "https://www.styleatacertainage.com/",
+    "summary": "Led editorial strategy and publishing operations for a nationally recognized fashion and lifestyle brand across two stints (2019–2021, 2022–2023). Drove substantial year-over-year revenue growth while doubling site traffic through strategic content optimization and data-informed growth initiatives.",
+    "description": "<ul><li>Two stints: Sep 2019 &ndash; Spring 2021 and Jan 2022 &ndash; May 2023</li><li>Led editorial strategy and publishing operations for a nationally recognized fashion and lifestyle brand</li><li>Drove substantial year-over-year revenue growth while significantly expanding audience reach</li><li>Doubled site traffic through strategic content optimization and data-informed growth initiatives</li><li>Oversaw monetization strategy and partnerships, aligning content performance with business objectives</li><li>Directed end-to-end content lifecycle, from planning and editing to analytics and performance refinement</li></ul>"
   },
   {
     "startdate": "2020-06-01",
