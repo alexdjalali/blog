@@ -14,7 +14,7 @@ images:
 <h2>Honors &amp; Awards</h2>
 
 <div class="honors-group">
-  <h3><img class="cv-entry-logo" src="/blog/images/logos/northwestern.png" alt="Northwestern logo" width="20" height="20"> Northwestern University</h3>
+  <h3><img class="cv-entry-logo" src="/images/logos/northwestern.png" alt="Northwestern logo" width="20" height="20"> Northwestern University</h3>
   <ul class="cv-list">
     <li><strong>Cum Laude</strong></li>
     <li><strong>Honors, Linguistics</strong></li>
@@ -24,21 +24,21 @@ images:
 </div>
 
 <div class="honors-group">
-  <h3><img class="cv-entry-logo" src="/blog/images/logos/amsterdam.png" alt="UvA logo" width="20" height="20"> University of Amsterdam</h3>
+  <h3><img class="cv-entry-logo" src="/images/logos/amsterdam.png" alt="UvA logo" width="20" height="20"> University of Amsterdam</h3>
   <ul class="cv-list">
     <li><strong>Fulbright Fellow</strong></li>
   </ul>
 </div>
 
 <div class="honors-group">
-  <h3><img class="cv-entry-logo" src="/blog/images/logos/standford.png" alt="Stanford logo" width="20" height="20"> Stanford University</h3>
+  <h3><img class="cv-entry-logo" src="/images/logos/standford.png" alt="Stanford logo" width="20" height="20"> Stanford University</h3>
   <ul class="cv-list">
     <li><strong>Phi Beta Kappa Fellowship</strong></li>
   </ul>
 </div>
 
 <div class="honors-group">
-  <h3><img class="cv-entry-logo" src="/blog/images/logos/cleargraph.png" alt="ClearGraph logo" width="20" height="20"> ClearGraph</h3>
+  <h3><img class="cv-entry-logo" src="/images/logos/cleargraph.png" alt="ClearGraph logo" width="20" height="20"> ClearGraph</h3>
   <ul class="cv-list">
     <li><strong>Celent Model Bank Award</strong></li>
   </ul>
@@ -53,7 +53,7 @@ images:
   <li><span class="pub-authors"><strong>Djalali, AJ</strong>.</span> <span class="pub-title"><a href="https://link.springer.com/article/10.1007/s10849-017-9248-0" target="_blank" rel="noopener noreferrer">"A constructive solution to the ranking problem in Partial Order Optimality Theory."</a></span> <span class="pub-extra"><em>Journal of Logic, Language &amp; Information</em>. 2017.</span></li>
   <li><span class="pub-authors"><strong>Djalali, AJ</strong>.</span> <span class="pub-title"><a href="https://aclanthology.org/2014.lilt-9.11/" target="_blank" rel="noopener noreferrer">"Synthetic logic."</a></span> <span class="pub-extra"><em>Linguistic Issues in Language Technology</em>. 2014.</span></li>
 </ul>
-<p class="cv-list-more"><a href="/blog/publications/">View all publications &amp; patents &rarr;</a></p>
+<p class="cv-list-more"><a href="/publications/">View all publications &amp; patents &rarr;</a></p>
 </div>
 
 <div class="tech-section">

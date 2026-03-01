@@ -1,4 +1,4 @@
-baseURL = "https://alexdjalali.github.io/blog/"
+baseURL = "https://alexdjalali.github.io/"
 title = "a.j.djalali"
 theme = "coder"
 languageCode = "en"
@@ -60,7 +60,7 @@ touchicon = "images/apple-touch-icon.png"
 license = '<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 
 [params.giscus]
-repo = "alexdjalali/blog"
+repo = "alexdjalali/alexdjalali.github.io"
 repoID = "R_kgDORVsOCg"
 category = "Announcements"
 categoryID = "DIC_kwDORVsOCs4C3OgY"
@@ -129,7 +129,7 @@ url = "https://open.spotify.com/user/alex.djalali"
 name = "RSS"
 icon = "fa-solid fa-rss fa-2x"
 weight = 5
-url = "https://alexdjalali.github.io/blog/index.xml"
+url = "https://alexdjalali.github.io/index.xml"
 rel = "alternate"
 type = "application/rss+xml"
 

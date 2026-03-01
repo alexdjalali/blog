@@ -32,7 +32,7 @@ In 2023 I co-founded [PerceptivePanda](https://www.perceptivepanda.com/), an AI 
 
 Today I'm **Research Faculty and Senior Research Engineer** at the [Georgia Institute of Technology](https://www.gatech.edu/), where I get to combine everything — linguistics, AI, and software engineering — under one roof.
 
-For the full professional rundown, see my [Resume](/blog/cv/). My academic work is collected on the [Publications](/blog/publications/) page.
+For the full professional rundown, see my [Resume](/cv/). My academic work is collected on the [Publications](/publications/) page.
 
 ### Outside the Terminal
 
@@ -45,9 +45,9 @@ I'm a workwear and Japanese denim enthusiast. [Iron Heart](https://www.ironheart
 I collect guitars — electrics and acoustics, old and new. And I'm an audiophile and vinyl collector, always hunting for the right pressing of the right record to play through the right setup.
 
 <div style="text-align: right; margin-bottom: 1.5em;">
-  <img src="/blog/images/signature.png" class="about-signature" alt="a.j.djalali signature">
+  <img src="/images/signature.png" class="about-signature" alt="a.j.djalali signature">
 </div>
 
 <div class="about-hero">
-  <img src="/blog/images/motorcyle.jpeg" class="about-hero-img" alt="a.j.djalali on a motorcycle">
+  <img src="/images/motorcyle.jpeg" class="about-hero-img" alt="a.j.djalali on a motorcycle">
 </div>

@@ -11,7 +11,7 @@ keywords: ["claude code", "ai skills", "software development lifecycle", "prompt
 series: ["Software Architecture"]
 ---
 
-In [a previous post](/blog/posts/how-i-learned-to-love-the-bomb/) I described the shift from AI skepticism to building an engineering system around it. I mentioned standards files, quality gates, and the idea that unconstrained AI produces mediocre code while constrained AI produces code that looks like yours. What I didn't show was the implementation — the actual mechanism that turns a blank terminal into a full development lifecycle.
+In [a previous post](/posts/how-i-learned-to-love-the-bomb/) I described the shift from AI skepticism to building an engineering system around it. I mentioned standards files, quality gates, and the idea that unconstrained AI produces mediocre code while constrained AI produces code that looks like yours. What I didn't show was the implementation — the actual mechanism that turns a blank terminal into a full development lifecycle.
 
 This post opens it up. Seventeen slash commands. Seven templates. Three model tiers. Each skill is short, composable, and single-purpose. Together they form a pipeline that mirrors how software has always been built — just faster.
 

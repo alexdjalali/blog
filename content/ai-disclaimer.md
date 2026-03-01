@@ -21,13 +21,13 @@ Every blog post on this site includes an **AI badge** next to the date and readi
 
 ### What "AI assistance" means here
 
-AI assistance does not mean I typed a prompt and published whatever came back. It means I used AI as a collaborator in the writing process — the same way I use it in my [development workflow](/blog/posts/how-i-learned-to-love-the-bomb/). I provide the ideas, the facts, the opinions, and the direction. The AI helps with drafting, phrasing, and structure. I review, edit, and approve everything that gets published.
+AI assistance does not mean I typed a prompt and published whatever came back. It means I used AI as a collaborator in the writing process — the same way I use it in my [development workflow](/posts/how-i-learned-to-love-the-bomb/). I provide the ideas, the facts, the opinions, and the direction. The AI helps with drafting, phrasing, and structure. I review, edit, and approve everything that gets published.
 
 The site itself — layout, styling, JavaScript, and infrastructure — was also built with AI assistance. The footer credits "a.j.djalali+claude" to reflect this.
 
 ### A note on publications
 
-All errors on this site are my own. Author ordering on the [publications](/blog/publications/) page does not reflect the order of authorship in the original print versions — I list myself first for navigability. Consult the linked source or BibTeX entry for canonical citation order.
+All errors on this site are my own. Author ordering on the [publications](/publications/) page does not reflect the order of authorship in the original print versions — I list myself first for navigability. Consult the linked source or BibTeX entry for canonical citation order.
 
 ### Why disclose this
 

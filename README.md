@@ -1,6 +1,6 @@
 # a.j.djalali
 
-Personal academic blog built with [Hugo](https://gohugo.io/) and the [Coder](https://github.com/luizdepra/hugo-coder) theme. Deployed to GitHub Pages at [alexdjalali.github.io/blog](https://alexdjalali.github.io/blog/).
+Personal academic blog built with [Hugo](https://gohugo.io/) and the [Coder](https://github.com/luizdepra/hugo-coder) theme. Deployed to GitHub Pages at [alexdjalali.github.io](https://alexdjalali.github.io/).
 
 ## Structure
 
@@ -45,4 +45,4 @@ Requires Hugo v0.124.0+ (extended). Current: v0.156.0.
 
 ## Deployment
 
-Pushes to `main` deploy automatically via GitHub Pages. The site is served from the `public/` directory at `https://alexdjalali.github.io/blog/`.
+Pushes to `main` deploy automatically via GitHub Pages. The site is served from the `public/` directory at `https://alexdjalali.github.io/`.

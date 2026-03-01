@@ -122,8 +122,8 @@ The following books, articles, and resources form the reading list for the cours
 - <a href="https://refactoring.com/" target="_blank" rel="noopener noreferrer">Refactoring: Improving the Design of Existing Code</a> by Martin Fowler — the catalog of refactorings and the chapter on code smells. The companion site <a href="https://refactoring.guru/refactoring/smells" target="_blank" rel="noopener noreferrer">Refactoring Guru</a> provides visual explanations of each smell.
 - **Clean Architecture** by Robert C. Martin — Part V on architecture, with emphasis on the dependency rule, the stable abstractions principle, and the separation of policy from detail.
 - <a href="https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/" target="_blank" rel="noopener noreferrer">The Pragmatic Programmer</a> — Chapter 5 on decoupling: the Law of Demeter, metaprogramming, and reducing coupling between components.
-- [The Ideal Repository Structure](/blog/posts/the-ideal-repository-structure/) — how strict layer boundaries prevent architectural decay, with Go and Python examples of interface-first, layered monorepo design.
-- [The Decorator Pattern for Observability and Resilience](/blog/posts/decorator-pattern-observability-resilience/) — composing cross-cutting concerns through decorator stacks rather than scattering them through business logic.
+- [The Ideal Repository Structure](/posts/the-ideal-repository-structure/) — how strict layer boundaries prevent architectural decay, with Go and Python examples of interface-first, layered monorepo design.
+- [The Decorator Pattern for Observability and Resilience](/posts/decorator-pattern-observability-resilience/) — composing cross-cutting concerns through decorator stacks rather than scattering them through business logic.
 
 ### Testing and Delivery (Weeks 6–7)
 
@@ -154,8 +154,8 @@ The following books, articles, and resources form the reading list for the cours
 - <a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/" target="_blank" rel="noopener noreferrer">OWASP Top 10 for Large Language Model Applications</a> — prompt injection, insecure output handling, training data poisoning, and other LLM-specific attack vectors. The AI-era companion to the classic Top 10.
 - <a href="https://slsa.dev/spec/v1.0/" target="_blank" rel="noopener noreferrer">SLSA Framework</a> (Supply-chain Levels for Software Artifacts) — a security framework for achieving increasing levels of supply chain integrity, from basic provenance to hermetic builds.
 - **Threat Modeling: Designing for Security** by Adam Shostack — the STRIDE methodology, attack trees, and practical approaches to identifying threats before they become vulnerabilities.
-- [Anatomy of an AI Engineering System](/blog/posts/anatomy-of-an-ai-engineering-system/) — how composable skills, quality gates, and model tiers turn AI tools into a disciplined engineering workflow rather than unconstrained generation.
-- [How I Learned to Love the Bomb](/blog/posts/how-i-learned-to-love-the-bomb/) — the shift from AI skepticism to building an engineering system around it, and why the leverage is real only if you bring the discipline with you.
+- [Anatomy of an AI Engineering System](/posts/anatomy-of-an-ai-engineering-system/) — how composable skills, quality gates, and model tiers turn AI tools into a disciplined engineering workflow rather than unconstrained generation.
+- [How I Learned to Love the Bomb](/posts/how-i-learned-to-love-the-bomb/) — the shift from AI skepticism to building an engineering system around it, and why the leverage is real only if you bring the discipline with you.
 
 ### Organization and Leadership (Weeks 14–15)
 

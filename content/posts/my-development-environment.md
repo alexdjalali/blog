@@ -226,7 +226,7 @@ The dotfiles also manage my AI coding tool configurations. The same engineering 
 ~/.kilocode/rules          -> ~/dotfiles/kilocode/rules
 ```
 
-This means my [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Cursor](https://www.cursor.com/), and [Kilo Code](https://kilocode.ai/) configurations are version-controlled alongside everything else. When I update a standard — say, adding a new quality gate or refining an architecture pattern — the change propagates to every tool the next time I open it. I wrote more about this workflow in [How I Learned to Love the Bomb](/blog/posts/how-i-learned-to-love-the-bomb/).
+This means my [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Cursor](https://www.cursor.com/), and [Kilo Code](https://kilocode.ai/) configurations are version-controlled alongside everything else. When I update a standard — say, adding a new quality gate or refining an architecture pattern — the change propagates to every tool the next time I open it. I wrote more about this workflow in [How I Learned to Love the Bomb](/posts/how-i-learned-to-love-the-bomb/).
 
 ## The Point
 

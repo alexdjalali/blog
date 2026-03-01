@@ -4,17 +4,17 @@
 
 ## Blog Posts
 
-- [The Ideal Repository Structure](https://alexdjalali.github.io/blog/posts/the-ideal-repository-structure/): How strict layer boundaries prevent architectural decay — a deep-dive into interface-first, layered monorepo design with Go and Python examples.
-- [How I Learned to Love the Bomb](https://alexdjalali.github.io/blog/posts/how-i-learned-to-love-the-bomb/): A developer's journey from AI skepticism to building an entire engineering system around it. Adapt or die — and what adaptation actually looks like.
-- [The Decorator Pattern for Observability and Resilience](https://alexdjalali.github.io/blog/posts/decorator-pattern-observability-resilience/): How the decorator pattern cleanly separates logging, metrics, retry, and circuit breaking from business logic — with examples in Python and Go.
-- [From Dependency Parses to Montague Semantics via Vector-Grounded Concept Bases](https://alexdjalali.github.io/blog/posts/dependency-to-lambda/): Exploring how Universal Dependencies parse trees, Montague-style typed lambda calculus, and vector-derived concept bases fit together into a compositional semantics pipeline.
-- [My Development Environment](https://alexdjalali.github.io/blog/posts/my-development-environment/): A walkthrough of a macOS development setup: zsh, neovim, tmux, and 80+ CLI tools — all managed from a single dotfiles repo with a one-command install.
+- [The Ideal Repository Structure](https://alexdjalali.github.io/posts/the-ideal-repository-structure/): How strict layer boundaries prevent architectural decay — a deep-dive into interface-first, layered monorepo design with Go and Python examples.
+- [How I Learned to Love the Bomb](https://alexdjalali.github.io/posts/how-i-learned-to-love-the-bomb/): A developer's journey from AI skepticism to building an entire engineering system around it. Adapt or die — and what adaptation actually looks like.
+- [The Decorator Pattern for Observability and Resilience](https://alexdjalali.github.io/posts/decorator-pattern-observability-resilience/): How the decorator pattern cleanly separates logging, metrics, retry, and circuit breaking from business logic — with examples in Python and Go.
+- [From Dependency Parses to Montague Semantics via Vector-Grounded Concept Bases](https://alexdjalali.github.io/posts/dependency-to-lambda/): Exploring how Universal Dependencies parse trees, Montague-style typed lambda calculus, and vector-derived concept bases fit together into a compositional semantics pipeline.
+- [My Development Environment](https://alexdjalali.github.io/posts/my-development-environment/): A walkthrough of a macOS development setup: zsh, neovim, tmux, and 80+ CLI tools — all managed from a single dotfiles repo with a one-command install.
 
 ## Author Pages
 
-- [About](https://alexdjalali.github.io/blog/about/)
-- [Publications](https://alexdjalali.github.io/blog/publications/)
-- [Resume](https://alexdjalali.github.io/blog/cv/)
+- [About](https://alexdjalali.github.io/about/)
+- [Publications](https://alexdjalali.github.io/publications/)
+- [Resume](https://alexdjalali.github.io/cv/)
 
 ## External Profiles
 

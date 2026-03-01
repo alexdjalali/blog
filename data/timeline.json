@@ -63,7 +63,7 @@
     "logo": "images/logos/tableau.png",
     "url": "https://www.tableau.com/",
     "summary": "Created the natural language technology behind Tableau's Ask Data feature, enabling users to query data visualizations in plain English. Scaled Natural Language Processing infrastructure with ElasticSearch-based semantic indexing. Published peer-reviewed research and was awarded 9 patents in natural language interfaces for data visualization.",
-    "description": "<ul><li>Created the natural language technology behind Tableau&rsquo;s Ask Data feature</li><li>Scaled Natural Language Processing infrastructure including ElasticSearch-based semantic indexing</li><li>Published &ldquo;<a href=\"https://dl.acm.org/doi/10.1145/3301275.3302270\" target=\"_blank\" rel=\"noopener noreferrer\">Inferencing underspecified natural language utterances in visual analysis</a>&rdquo; (IUI 2019)</li><li>9 <a href=\"/blog/publications/#patents\">patents</a> in natural language interfaces for data visualization</li></ul>"
+    "description": "<ul><li>Created the natural language technology behind Tableau&rsquo;s Ask Data feature</li><li>Scaled Natural Language Processing infrastructure including ElasticSearch-based semantic indexing</li><li>Published &ldquo;<a href=\"https://dl.acm.org/doi/10.1145/3301275.3302270\" target=\"_blank\" rel=\"noopener noreferrer\">Inferencing underspecified natural language utterances in visual analysis</a>&rdquo; (IUI 2019)</li><li>9 <a href=\"/publications/#patents\">patents</a> in natural language interfaces for data visualization</li></ul>"
   },
   {
     "startdate": "2020-06-01",
