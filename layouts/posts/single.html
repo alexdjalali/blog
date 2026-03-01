@@ -62,7 +62,7 @@
 
       <div class="post-content">
         {{ if .Params.featuredImage }}
-          <img src="{{ .Params.featuredImage | relURL }}" alt="{{ .Title }}" loading="lazy" decoding="async"/>
+          <img src="{{ .Params.featuredImage | relURL }}" alt="{{ .Title }}" loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 720px" width="1168" height="784" style="width:100%;height:auto;"/>
         {{ end }}
         {{ .Content }}
       </div>

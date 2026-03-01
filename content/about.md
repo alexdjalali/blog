@@ -30,7 +30,9 @@ Toward the end of grad school I interned at [Nuance Communications](https://www.
 
 During grad school I also founded a private tutoring practice in the Bay Area, working with high school students on everything from English and Spanish to Calculus, AP Programming, AP Biology, and SAT/ACT prep. Every one of my students scored above 30 on the ACT and was accepted into the college of their choice.
 
-I later served as Head of Content & Growth at [Style at a Certain Age](https://www.styleatacertainage.com/), a nationally recognized fashion and lifestyle brand, where I led editorial strategy, doubled site traffic, and drove substantial revenue growth.
+Before all the tech and academia, I cut my teeth as a writer. In high school I freelanced for the [Pacific Daily News](https://www.guampdn.com/) in Guam, covering the local lifestyle scene — musicians, bars, restaurants, and cultural happenings. That itch never went away. During grad school at Stanford I wrote for [Doommantia](https://doommantia.com/), an online music magazine dedicated to underground doom and stoner metal. I reviewed albums like [The Sword – *Warp Riders*](https://doommantia.wordpress.com/2010/08/20/the-sword-warp-riders/), [Mose Giganticus – *Gift Horse*](https://doommantia.wordpress.com/2010/08/22/mose-giganticus-gift-horse/), [Dirty Woman – *Demon Lover*](https://doommantia.wordpress.com/2010/08/13/dirty-woman-demon-lover/), and [Kvelertak – *S/T*](https://doommantia.wordpress.com/2010/07/09/kvelertak-st/), and wrote longer pieces like [revisiting Sleep's *Holy Mountain*](https://doommantia.wordpress.com/2010/08/03/still-worshiping-that-holy-mountain-a-j-revisits-the-sleep-classic/).
+
+I later served as Director of Operations & Content Strategy at [Style at a Certain Age](https://www.styleatacertainage.com/), a nationally recognized fashion and lifestyle brand, where I led editorial strategy, doubled site traffic, and drove substantial revenue growth.
 
 In 2023 I co-founded [PerceptivePanda](https://www.perceptivepanda.com/), an AI startup that was accepted into [StartX](https://startx.com/) '24. PerceptivePanda was [acquired by Zapier](https://zapier.com/) in 2025.
 

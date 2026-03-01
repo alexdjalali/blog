@@ -1,5 +1,60 @@
 [
   {
+    "startdate": "1999-08-01",
+    "enddate": "1999-12-01",
+    "title": "Western Albemarle High School",
+    "shorttitle": "Western Albemarle",
+    "type": "education",
+    "logo": "images/logos/western-albemarle.png",
+    "url": "https://wah.k12albemarle.org/",
+    "summary": "Attended Western Albemarle High School in Crozet, Virginia.",
+    "description": "<ul><li>Crozet, Virginia</li></ul>"
+  },
+  {
+    "startdate": "2000-01-01",
+    "enddate": "2002-12-01",
+    "title": "St. John's School",
+    "shorttitle": "St. John's",
+    "type": "education",
+    "logo": "images/logos/stjohns.png",
+    "url": "https://www.stjohnsguam.com/",
+    "summary": "Attended St. John's School in Guam. National Honor Society member and National Merit Scholar Semi-Finalist.",
+    "description": "<ul><li>Tumon, Guam</li><li>National Honor Society</li><li>National Merit Scholar Semi-Finalist</li></ul>"
+  },
+  {
+    "startdate": "2003-01-01",
+    "enddate": "2003-02-01",
+    "title": "Hopkins High School",
+    "shorttitle": "Hopkins",
+    "type": "education",
+    "logo": "images/logos/hopkins.png",
+    "url": "https://www.hopkinsschools.org/hopkins-high-school",
+    "summary": "Graduated early from Hopkins High School in Minnetonka, Minnesota.",
+    "description": "<ul><li>Minnetonka, Minnesota</li><li>Graduated early</li></ul>"
+  },
+  {
+    "startdate": "2003-05-01",
+    "enddate": "2003-08-01",
+    "title": "Congressional Intern — Office of Delegate Madeleine Bordallo",
+    "shorttitle": "Congress",
+    "type": "job",
+    "logo": "images/logos/congress.png",
+    "url": "https://www.congress.gov/member/madeleine-bordallo/B001245",
+    "summary": "Congressional intern for Delegate Madeleine Bordallo, Guam's representative to the U.S. House of Representatives and the first woman to represent Guam in Congress.",
+    "description": "<ul><li>Congressional intern for <a href=\"https://www.congress.gov/member/madeleine-bordallo/B001245\" target=\"_blank\" rel=\"noopener noreferrer\">Delegate Madeleine Bordallo</a>, Guam&rsquo;s representative to the U.S. House</li><li>First woman to represent Guam in Congress</li></ul>"
+  },
+  {
+    "startdate": "2003-12-01",
+    "enddate": "2004-05-01",
+    "title": "Freelance Journalist — Pacific Daily News",
+    "shorttitle": "PDN",
+    "type": "job",
+    "logo": "images/logos/pdn.png",
+    "url": "https://www.guampdn.com/",
+    "summary": "Freelance lifestyle journalist for the Pacific Daily News, Guam's primary newspaper. Covered local musicians, bands, bars, restaurants, and cultural activities across the island.",
+    "description": "<ul><li>Freelance lifestyle journalist for the <a href=\"https://www.guampdn.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Pacific Daily News</a>, Guam&rsquo;s primary newspaper</li><li>Covered local musicians, bands, bars, restaurants, and cultural activities</li></ul>"
+  },
+  {
     "startdate": "2004-09-01",
     "enddate": "2008-06-01",
     "title": "BA, Linguistics — Northwestern University",
@@ -23,7 +78,7 @@
   },
   {
     "startdate": "2009-09-01",
-    "enddate": "2015-06-01",
+    "enddate": "2014-06-01",
     "title": "PhD, Linguistics — Stanford University",
     "shorttitle": "Stanford PhD",
     "type": "education",
@@ -33,8 +88,19 @@
     "description": "<ul><li>Dissertation: &ldquo;<a href=\"https://stacks.stanford.edu/file/druid:zd767rn6093/djalali_diss_final-augmented.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">The syntax and semantics of ordinary comparative constructions in English</a>&rdquo;</li><li>Published 5 peer-reviewed papers, including work with <a href=\"https://web.stanford.edu/~cgpotts/\" target=\"_blank\" rel=\"noopener noreferrer\">Christopher Potts</a> on natural logic</li><li><a href=\"https://www.pbk.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Phi Beta Kappa</a> Fellowship (2014)</li><li>Focus on formal semantics, mathematical linguistics, syntax, and phonology</li></ul>"
   },
   {
-    "startdate": "2012-01-01",
-    "enddate": "2014-06-01",
+    "startdate": "2010-01-01",
+    "enddate": "2010-12-01",
+    "title": "Staff Writer — Doommantia",
+    "shorttitle": "Doommantia",
+    "type": "job",
+    "logo": "images/logos/doommantia.png",
+    "url": "https://doommantia.com/",
+    "summary": "Staff writer for Doommantia, an online music magazine covering underground doom and stoner metal. Contributed album reviews and artist interviews.",
+    "description": "<ul><li>Staff writer for <a href=\"https://doommantia.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Doommantia</a>, an online music magazine covering underground doom and stoner metal</li><li>Contributed album reviews and artist interviews</li></ul>"
+  },
+  {
+    "startdate": "2012-04-01",
+    "enddate": "2014-11-01",
     "title": "Founder — Djalali Tutoring",
     "shorttitle": "Tutoring",
     "type": "job",
@@ -44,7 +110,7 @@
     "description": "<ul><li>Founded and operated a private tutoring practice for high school students in the Bay Area</li><li>Taught English, Spanish, Math (Algebra, Algebra 2, Geometry, Trigonometry, Calculus), AP Programming, AP Biology, and SAT/ACT Prep</li><li>All students achieved &gt;30 on the ACT and were accepted into the colleges of their choice</li></ul>"
   },
   {
-    "startdate": "2014-06-01",
+    "startdate": "2014-05-01",
     "enddate": "2014-09-01",
     "title": "Intern — Nuance Communications",
     "shorttitle": "Nuance",
@@ -79,7 +145,7 @@
   {
     "startdate": "2019-09-01",
     "enddate": "2023-05-01",
-    "title": "Head of Content & Growth — Style at a Certain Age",
+    "title": "Director of Operations & Content Strategy — Style at a Certain Age",
     "shorttitle": "SAACA",
     "type": "job",
     "logo": "images/logos/saaca.png",

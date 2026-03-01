@@ -6,6 +6,13 @@
 
   if (!window.timelineData || !window.timelineData.length) return;
 
+  // Parse date strings as noon local time to avoid timezone-related off-by-one-day shifts
+  function parseDate(s) {
+    if (!s) return null;
+    var parts = s.split("-");
+    return new Date(+parts[0], +parts[1] - 1, +parts[2], 12, 0, 0);
+  }
+
   var dataset = window.timelineData.slice().sort(function (a, b) {
     return d3.ascending(a.startdate, b.startdate);
   });
@@ -39,8 +46,8 @@
     var laneEnds = [];
 
     dataset.forEach(function (d) {
-      var start = new Date(d.startdate);
-      var end = d.enddate ? new Date(d.enddate) : PRESENT;
+      var start = parseDate(d.startdate);
+      var end = d.enddate ? parseDate(d.enddate) : PRESENT;
       var placed = false;
 
       for (var i = 0; i < laneEnds.length; i++) {
@@ -62,19 +69,19 @@
   }
 
   function barWidth(d) {
-    var end = d.enddate ? new Date(d.enddate) : PRESENT;
-    return Math.max(x(end) - x(new Date(d.startdate)), MIN_BAR_WIDTH);
+    var end = d.enddate ? parseDate(d.enddate) : PRESENT;
+    return Math.max(x(end) - x(parseDate(d.startdate)), MIN_BAR_WIDTH);
   }
 
   function getDate(d) {
     var fmtMonth = d3.timeFormat("%b");
     var fmtYear = d3.timeFormat("%Y");
-    var start = new Date(d.startdate);
+    var start = parseDate(d.startdate);
     var sm = fmtMonth(start), sy = fmtYear(start);
 
     if (!d.enddate) return sm + " " + sy + " \u2013 Present";
 
-    var end = new Date(d.enddate);
+    var end = parseDate(d.enddate);
     var em = fmtMonth(end), ey = fmtYear(end);
 
     if (sy === ey) return sm + " \u2013 " + em + " " + sy;
@@ -99,7 +106,7 @@
     var width = svgWidth - MARGIN.left - MARGIN.right;
     var height = numLanes * (LANE_HEIGHT + LANE_PAD) + MARGIN.top + MARGIN.bottom;
 
-    var minDate = d3.min(dataset, function (d) { return new Date(d.startdate); });
+    var minDate = d3.min(dataset, function (d) { return parseDate(d.startdate); });
     var maxDate = PRESENT;
 
     x = d3.scaleTime()
@@ -167,7 +174,7 @@
       .attr("height", LANE_HEIGHT)
       .attr("rx", 4)
       .attr("ry", 4)
-      .attr("x", function (d) { return x(new Date(d.startdate)); })
+      .attr("x", function (d) { return x(parseDate(d.startdate)); })
       .attr("width", 0)
       .on("click", function (event, d) { scrollToEntry(d); })
       .on("mouseover", function (event, d) { showTooltip(event, d); highlight(d); })
@@ -263,7 +270,7 @@
 
     logoLink.append("img")
       .attr("class", "cv-entry-logo")
-      .attr("src", function (d) { return siteBaseURL + d.logo; })
+      .attr("src", function (d) { return "/" + d.logo; })
       .attr("alt", function (d) { return d.shorttitle + " logo"; })
       .attr("width", 20)
       .attr("height", 20);
@@ -351,14 +358,14 @@
     var modalSvgWidth = modalNode.clientWidth;
     var modalHeight = numLanes * (MODAL_LANE_HEIGHT + MODAL_LANE_PAD) + MODAL_MARGIN.top + MODAL_MARGIN.bottom;
 
-    var minDate = d3.min(dataset, function (d) { return new Date(d.startdate); });
+    var minDate = d3.min(dataset, function (d) { return parseDate(d.startdate); });
     var maxDate = PRESENT;
 
     var mx = d3.scaleTime().domain([minDate, maxDate]).range([0, modalWidth]);
 
     function modalBarWidth(d) {
-      var end = d.enddate ? new Date(d.enddate) : PRESENT;
-      return Math.max(mx(end) - mx(new Date(d.startdate)), MIN_BAR_WIDTH);
+      var end = d.enddate ? parseDate(d.enddate) : PRESENT;
+      return Math.max(mx(end) - mx(parseDate(d.startdate)), MIN_BAR_WIDTH);
     }
 
     var msvg = modal.append("svg")
@@ -419,7 +426,7 @@
       .attr("height", MODAL_LANE_HEIGHT)
       .attr("rx", 4)
       .attr("ry", 4)
-      .attr("x", function (d) { return mx(new Date(d.startdate)); })
+      .attr("x", function (d) { return mx(parseDate(d.startdate)); })
       .attr("width", function (d) { return modalBarWidth(d); })
       .on("click", function (event, d) {
         closeModal();
@@ -447,7 +454,7 @@
     // Labels in modal — show if they fit
     var mlabels = mbars.append("text")
       .attr("class", "bar-label")
-      .attr("x", function (d) { return mx(new Date(d.startdate)) + 6; })
+      .attr("x", function (d) { return mx(parseDate(d.startdate)) + 6; })
       .attr("y", function (d) { return d._lane * (MODAL_LANE_HEIGHT + MODAL_LANE_PAD) + MODAL_LANE_HEIGHT / 2; })
       .attr("dy", "0.35em")
       .style("font-size", "12px")
@@ -486,7 +493,7 @@
     var width = svgWidth - MARGIN.left - MARGIN.right;
     var height = numLanes * (LANE_HEIGHT + LANE_PAD) + MARGIN.top + MARGIN.bottom;
 
-    var minDate = d3.min(dataset, function (d) { return new Date(d.startdate); });
+    var minDate = d3.min(dataset, function (d) { return parseDate(d.startdate); });
     var maxDate = PRESENT;
 
     x = d3.scaleTime().domain([minDate, maxDate]).range([0, width]);
@@ -544,7 +551,7 @@
       .attr("height", LANE_HEIGHT)
       .attr("rx", 4)
       .attr("ry", 4)
-      .attr("x", function (d) { return x(new Date(d.startdate)); })
+      .attr("x", function (d) { return x(parseDate(d.startdate)); })
       .attr("width", function (d) { return barWidth(d); })
       .on("click", function (event, d) { scrollToEntry(d); })
       .on("mouseover", function (event, d) { showTooltip(event, d); highlight(d); })

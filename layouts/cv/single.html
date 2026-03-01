@@ -37,13 +37,13 @@
     </article>
   </section>
 
+  {{ if $.Site.Data.timeline }}
   {{/* D3.js v7 from CDN */}}
   <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 
   {{/* Embed timeline data from Hugo data directory */}}
   <script>
     var timelineData = {{ $.Site.Data.timeline | jsonify | safeJS }};
-    var siteBaseURL = {{ .Site.BaseURL | jsonify | safeJS }};
   </script>
 
   {{/* Timeline script */}}
@@ -53,5 +53,6 @@
   {{ else }}
   {{ $script = $script | resources.Minify }}
   <script>{{ $script.Content | safeJS }}</script>
+  {{ end }}
   {{ end }}
 {{ end }}
