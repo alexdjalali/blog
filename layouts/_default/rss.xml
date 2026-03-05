@@ -31,7 +31,7 @@
       {{ else }}
       <description>{{ .Summary | plainify | htmlUnescape }}</description>
       {{ end }}
-      <content:encoded><![CDATA[{{ .Content }}]]></content:encoded>
+      <content:encoded>{{ printf "<![CDATA[%s]]>" .Content | safeHTML }}</content:encoded>
       {{ range .Params.tags }}
       <category>{{ . }}</category>
       {{ end }}

@@ -88,18 +88,13 @@ connectsrc = ["'self'", "https://www.google-analytics.com", "https://www.googlet
 languageName = "English"
 
 [[languages.en.menu.main]]
-name = "Home"
-weight = 1
-url = "/"
-
-[[languages.en.menu.main]]
 name = "Posts"
-weight = 2
+weight = 1
 url = "posts/"
 
 [[languages.en.menu.main]]
 name = "Projects"
-weight = 3
+weight = 2
 url = "projects/"
 
 [[languages.en.menu.main]]
@@ -113,8 +108,18 @@ weight = 5
 url = "publications/"
 
 [[languages.en.menu.main]]
-name = "About"
+name = "Media"
 weight = 6
+url = "media/"
+
+[[languages.en.menu.main]]
+name = "Gear"
+weight = 7
+url = "gear/"
+
+[[languages.en.menu.main]]
+name = "About"
+weight = 8
 url = "about/"
 
 [[params.social]]

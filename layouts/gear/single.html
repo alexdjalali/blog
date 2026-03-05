@@ -1,0 +1,32 @@
+{{ define "title" }}
+  {{ .Title }} · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+  <section class="container page">
+    <article>
+      <header>
+        <h1 class="title">
+          <a class="title-link" href="{{ .Permalink | safeURL }}">
+            {{ .Title }}
+          </a>
+        </h1>
+      </header>
+
+      <div class="gear-grid">
+        {{ range .Params.categories }}
+        <div class="gear-card">
+          <h2 class="gear-card-title">
+            <i class="{{ .icon }}" aria-hidden="true"></i>
+            {{ .title }}
+          </h2>
+          <ul class="gear-card-list">
+            {{ range .items }}
+            <li>{{ . | markdownify }}</li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+      </div>
+    </article>
+  </section>
+{{ end }}
