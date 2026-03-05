@@ -210,3 +210,29 @@ style QD fill:#e2e3e5,stroke:#333
     <a href="https://github.com/alexdjalali/OT" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> View on GitHub</a>
   </p>
 </div>
+
+<div class="project-card">
+  <h2>Doctoral Dissertation: On Adjectival Comparatives</h2>
+  <div class="project-tech-list">
+    <span class="project-tech">Formal Semantics</span>
+    <span class="project-tech">Continuation Semantics</span>
+    <span class="project-tech">Montague Grammar</span>
+    <span class="project-tech">Type Theory</span>
+    <span class="project-tech">Syntax</span>
+  </div>
+  <p>
+    <a href="https://stacks.stanford.edu/file/druid:zd767rn6093/djalali_diss_final-augmented.pdf" target="_blank" rel="noopener noreferrer"><em>The syntax and semantics of ordinary comparative constructions in English</em></a>. PhD Dissertation, Department of Linguistics, Stanford University, 2015.
+  </p>
+  <p>
+    The dissertation argues that the standard degree-based analyses of comparative constructions in English&mdash;the dominant paradigm in formal semantics since the 1970s&mdash;are fundamentally flawed. Under degree semantics, gradable adjectives like <em>tall</em> or <em>expensive</em> denote functions from individuals to abstract degrees on a scale, and comparatives are analyzed through covert degree operators that bind degree variables. This machinery requires a rich ontology of degrees as first-class semantic objects, along with complex syntactic movement operations to get the right scope relations.
+  </p>
+  <p>
+    The dissertation develops an alternative account that dispenses with degrees entirely. The framework is grounded in Barker and Shan&rsquo;s continuation semantics and Muskens&rsquo; simplified Montague logic&mdash;a type-logical system where meaning composition is driven by continuations rather than movement. In this approach, the meaning of a comparative is computed compositionally through the grammar itself: each syntactic rule carries a corresponding semantic action, and the continuation-passing style handles scope-taking without positing any covert operators or degree abstractions. The result is a transparent, minimal semantic representation language where the syntax does the work that degree semantics delegates to hidden structure.
+  </p>
+  <p>
+    The account covers the core empirical landscape of English comparatives&mdash;phrasal comparatives (<em>taller than Kim</em>), clausal comparatives (<em>taller than Kim is</em>), subcomparatives, and differential comparatives&mdash;showing that each falls out naturally from the continuation-based composition without the stipulations required by degree analyses. The dissertation also addresses long-standing puzzles around scope interactions between comparatives and quantifiers, providing principled derivations where the standard approach requires ad hoc constraints.
+  </p>
+  <p>
+    <a href="https://stacks.stanford.edu/file/druid:zd767rn6093/djalali_diss_final-augmented.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i> Read the dissertation</a>
+  </p>
+</div>
