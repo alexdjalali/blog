@@ -2289,6 +2289,191 @@ body.colorscheme-dark .project-tech {
   }
 }
 
+/* ── Card-deck navigation ── */
+.card-deck {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-deck .card-deck-item {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-deck .card-deck-item:not(.is-current) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card-deck .card-deck-item.is-current {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+/* Stack effect — stacked-papers look behind active card */
+.card-deck.has-multiple::before,
+.card-deck.has-multiple::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  height: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-primary);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.card-deck.has-multiple::before {
+  bottom: -4px;
+  opacity: 0.6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.card-deck.has-multiple::after {
+  bottom: -8px;
+  left: 4px;
+  right: 4px;
+  opacity: 0.35;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+/* Navigation controls */
+.card-deck-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8em;
+  margin-top: 1em;
+  padding-bottom: 12px;
+}
+
+.card-deck-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  color: var(--text-body);
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+  font-family: inherit;
+  padding: 0;
+  line-height: 1;
+}
+
+.card-deck-btn:hover:not(:disabled) {
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+}
+
+.card-deck-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.card-deck-counter {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  min-width: 3em;
+  text-align: center;
+}
+
+/* Dark mode — explicit */
+body.colorscheme-dark .card-deck.has-multiple::before,
+body.colorscheme-dark .card-deck.has-multiple::after {
+  background: #1a1a1a;
+  border-color: #333;
+}
+
+body.colorscheme-dark .card-deck-btn {
+  background: #1a1a1a;
+  border-color: #444;
+  color: #ccc;
+}
+
+body.colorscheme-dark .card-deck-btn:hover:not(:disabled) {
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+}
+
+/* Dark mode — auto */
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .card-deck.has-multiple::before,
+  body.colorscheme-auto .card-deck.has-multiple::after {
+    background: #1a1a1a;
+    border-color: #333;
+  }
+
+  body.colorscheme-auto .card-deck-btn {
+    background: #1a1a1a;
+    border-color: #444;
+    color: #ccc;
+  }
+
+  body.colorscheme-auto .card-deck-btn:hover:not(:disabled) {
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .card-deck .card-deck-item {
+    transition: none !important;
+  }
+}
+
+/* Touch targets */
+@media (hover: none) and (pointer: coarse) {
+  .card-deck-btn {
+    width: 2.75rem;
+    height: 2.75rem;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* Print — show all cards, hide nav */
+@media print {
+  .card-deck .card-deck-item:not(.is-current) {
+    position: relative !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+  }
+
+  .card-deck-nav {
+    display: none !important;
+  }
+
+  .card-deck.has-multiple::before,
+  .card-deck.has-multiple::after {
+    display: none !important;
+  }
+}
+
+/* Giscus comments — ensure full-width rendering */
+.comments {
+  width: 100%;
+}
+
+.giscus,
+.giscus-frame {
+  width: 100% !important;
+}
+
 /* Touch-friendly states */
 @media (hover: none) and (pointer: coarse) {
   .post-card, .footer-social a { transition: none; }
@@ -2543,6 +2728,52 @@ body.colorscheme-dark .series-post-item:hover {
 .reading-category:hover {
   background: var(--accent-red);
   color: #fff;
+}
+
+/* Star ratings */
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15em;
+  font-size: 1.1em;
+  margin-top: 0.5em;
+  color: #d4a017;
+}
+
+.star-rating .star-full::before   { content: "\2605"; }
+.star-rating .star-half {
+  position: relative;
+  display: inline-block;
+  color: var(--border);
+}
+.star-rating .star-half::before   { content: "\2605"; }
+.star-rating .star-half::after {
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #d4a017;
+}
+.star-rating .star-empty {
+  color: var(--border);
+}
+.star-rating .star-empty::before  { content: "\2605"; }
+
+body.colorscheme-dark .star-rating .star-half {
+  color: #444;
+}
+body.colorscheme-dark .star-rating .star-empty {
+  color: #444;
+}
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto .star-rating .star-half {
+    color: #444;
+  }
+  body.colorscheme-auto .star-rating .star-empty {
+    color: #444;
+  }
 }
 
 /* ── Dropdown navigation menus ── */
