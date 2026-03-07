@@ -1,14 +1,37 @@
 {{- $author := dict "@type" "Person" "name" "AJ Djalali" "url" .Site.BaseURL "jobTitle" "Research Faculty" "description" "Research faculty and senior research engineer at Georgia Tech. PhD in Linguistics from Stanford, specializing in computational semantics, NLP, and software architecture." "affiliation" (dict "@type" "Organization" "name" "Georgia Institute of Technology" "url" "https://www.gatech.edu/") "alumniOf" (slice (dict "@type" "CollegeOrUniversity" "name" "Stanford University" "department" "Linguistics") (dict "@type" "CollegeOrUniversity" "name" "Northwestern University") (dict "@type" "CollegeOrUniversity" "name" "University of Amsterdam")) "sameAs" (slice "https://github.com/alexdjalali/" "https://www.linkedin.com/in/alex-djalali-272502273/" "https://scholar.google.com/citations?user=nNk4g6oAAAAJ&hl=en") -}}
 
 {{- if .IsHome -}}
-{{/* Homepage: WebSite schema */}}
+{{/* Homepage: WebSite schema with SearchAction */}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "{{ .Site.Title }}",
   "url": "{{ .Site.BaseURL }}",
-  "author": {{ $author | jsonify | safeJS }}
+  "author": {{ $author | jsonify | safeJS }},
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{ .Site.BaseURL }}search/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{{/* Homepage: SiteNavigationElement for sitelinks */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {{- range $i, $e := .Site.Menus.main }}
+    {{ if $i }},{{ end }}{
+      "@type": "SiteNavigationElement",
+      "name": "{{ .Name }}",
+      "url": "{{ .URL | absURL }}"
+    }
+    {{- end }}
+  ]
 }
 </script>
 {{- end -}}

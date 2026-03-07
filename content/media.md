@@ -28,6 +28,23 @@ images:
     </div>
   </div>
 </div>
+<div class="project-card card-deck-item" style="display:flex;gap:1.5em;align-items:flex-start;">
+  <a href="https://www.amazon.com/Underground-Vintage-Classics-Fyodor-Dostoevsky/dp/067973452X" style="flex-shrink:0;">
+    <img src="/images/notes-underground-dostoevsky.jpg" alt="Notes from the Underground by Fyodor Dostoevsky" width="120" style="border-radius:4px;">
+  </a>
+  <div>
+    <h2><a href="https://www.amazon.com/Underground-Vintage-Classics-Fyodor-Dostoevsky/dp/067973452X">Notes from the Underground</a></h2>
+    <div class="project-tech-list">
+      <span class="reading-category">Book</span>
+      <span class="project-tech">Fyodor Dostoevsky</span>
+      <span class="project-tech">Russian Literature</span>
+      <span class="project-tech">Philosophy</span>
+    </div>
+    <div class="star-rating" aria-label="5 out of 5 stars">
+      <span class="star-full"></span><span class="star-full"></span><span class="star-full"></span><span class="star-full"></span><span class="star-full"></span>
+    </div>
+  </div>
+</div>
 </div>
 
 <hr class="section-divider">
